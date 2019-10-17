@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-WakePenguinUp/Pods-WakePenguinUp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework
+${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

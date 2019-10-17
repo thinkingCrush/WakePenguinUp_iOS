@@ -1,0 +1,26 @@
+PODS:
+  - ImageSlideshow (1.8.0):
+    - ImageSlideshow/Core (= 1.8.0)
+  - ImageSlideshow/Core (1.8.0)
+  - MBCircularProgressBar (0.3.5)
+  - SideMenu (6.0.0)
+
+DEPENDENCIES:
+  - ImageSlideshow (~> 1.8)
+  - MBCircularProgressBar
+  - SideMenu (~> 6.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ImageSlideshow
+    - MBCircularProgressBar
+    - SideMenu
+
+SPEC CHECKSUMS:
+  ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  SideMenu: 1b826b95cc7db1a3c7d164f8a6e6e92506ffb0f5
+
+PODFILE CHECKSUM: 8c3993544b0c63663d7b0bcca966eb802574ec1e
+
+COCOAPODS: 1.8.0
