@@ -11,6 +11,7 @@ import UIKit
 import WebKit
 import AudioToolbox
 import SideMenu
+import AVKit
 
 class MainViewController : BaseViewController, WKUIDelegate {
     var webView : WKWebView!
@@ -29,6 +30,9 @@ class MainViewController : BaseViewController, WKUIDelegate {
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var emptyFavoritesView: UIView!
     @IBOutlet weak var webViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     var lockButton : UIButton?
     var time = 4
@@ -50,26 +54,62 @@ class MainViewController : BaseViewController, WKUIDelegate {
     var isFavoritesCheck = false
     
     var isInitStartCheck = true
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+    var lastWebViewUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.becomeFirstResponder()
+        setFont()
         setNotification()
         setWebView()
         setLockView()
         setView()
     }
 
+    func setFont(){
+        errorLabel.text = R.string.Message_01
+        emptyLabel.text = R.string.Message_06
+        urlTextFiled.placeholder = R.string.Message_07
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        navigationController?.isNavigationBarHidden = true
+        appDelegate.shouldSupportAllOrientation = false
+        
+        DispatchQueue.main.async() {
+            if let view = self.navigationController?.view.viewWithTag(10000) {
+                view.removeFromSuperview()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setFavoritesList()
     }
     
+  
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print("viewWillTranstion!")
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if let topController = UIApplication.topMostViewController{
+            print(String(describing: topController))
+            if let lockView = topController.view.viewWithTag(1000){
+                print("check!")
+                DispatchQueue.main.async {
+                    lockView.center = topController.view.center
+                }
+//                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+//                    lockView.center = topController.view.center
+//                }
+            }
+        }
+    }
+    
+
     func setFavoritesList(){
         favoritesList = []
         let initAppSetting = userDefault.bool(forKey: "InitAppSetting")
@@ -89,30 +129,51 @@ class MainViewController : BaseViewController, WKUIDelegate {
                         self.webView.load(URLRequest(url: url!))
                     }else {
                         if isInitStartCheck {
-                            urlTextFiled.text = ""
-                            favoritesStarImage.image = UIImage(named: "icon_star_off")
-                            emptyFavoritesView.isHidden = false
+                            if lastWebViewUrl == "" {
+                                urlTextFiled.text = ""
+                                favoritesStarImage.image = UIImage(named: "icon_star_off")
+                                emptyFavoritesView.isHidden = false
+                                isFavoritesCheck = false
+                            }else {
+                                favoritesStarImage.image = UIImage(named: "icon_star_off")
+                                emptyFavoritesView.isHidden = true
+                                isFavoritesCheck = false
+                            }
                         }
                     }
                 }catch {
                     if isInitStartCheck {
-                        urlTextFiled.text = ""
-                        favoritesStarImage.image = UIImage(named: "icon_star_off")
-                        emptyFavoritesView.isHidden = false
+                        if lastWebViewUrl == "" {
+                            urlTextFiled.text = ""
+                            favoritesStarImage.image = UIImage(named: "icon_star_off")
+                            emptyFavoritesView.isHidden = false
+                            isFavoritesCheck = false
+                        }else {
+                            favoritesStarImage.image = UIImage(named: "icon_star_off")
+                            emptyFavoritesView.isHidden = true
+                            isFavoritesCheck = false
+                        }
                     }
                     print("error.")
                 }
             }else {
-                urlTextFiled.text = ""
-                favoritesStarImage.image = UIImage(named: "icon_star_off")
-                emptyFavoritesView.isHidden = false
+                if lastWebViewUrl == "" {
+                    urlTextFiled.text = ""
+                    favoritesStarImage.image = UIImage(named: "icon_star_off")
+                    emptyFavoritesView.isHidden = false
+                    isFavoritesCheck = false
+                }else {
+                    favoritesStarImage.image = UIImage(named: "icon_star_off")
+                    emptyFavoritesView.isHidden = true
+                    isFavoritesCheck = false
+                }
             }
             
         }else {
             let dataList : [Favorites] = [
-                Favorites(name: "유튜브", url: "https://m.youtube.com", thumbnailColor: UIColor.colorFromHex(15348515), thumbnailText: "Y"),
-                Favorites(name: "네이버", url: "https://m.naver.com", thumbnailColor: UIColor.colorFromHex(6212714), thumbnailText: "N"),
-                Favorites(name: "구글", url: "https://www.google.com", thumbnailColor: UIColor.colorFromHex(5473260), thumbnailText: "G")
+                Favorites(name: R.string.Item_youtube, url: "https://m.youtube.com", thumbnailColor: UIColor.colorFromHex(15348515), thumbnailText: "Y"),
+                Favorites(name: R.string.Item_naver, url: "https://m.naver.com", thumbnailColor: UIColor.colorFromHex(6212714), thumbnailText: "N"),
+                Favorites(name: R.string.Item_google, url: "https://www.google.com", thumbnailColor: UIColor.colorFromHex(5473260), thumbnailText: "G")
             ]
             favoritesList = dataList
             
@@ -124,7 +185,11 @@ class MainViewController : BaseViewController, WKUIDelegate {
             }catch {
                 
             }
-            emptyFavoritesView.isHidden = false
+            emptyFavoritesView.isHidden = true
+            isFavoritesCheck = true
+            favoritesStarImage.image = UIImage(named: "icon_star_on")
+            let url = URL(string: "https://m.youtube.com")
+            self.webView.load(URLRequest(url: url!))
             
         }
     }
@@ -165,6 +230,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
     
     func setLockView(){
         lockView = LockView(frame: CGRect(x: self.view.frame.maxX / 2 - 40, y: self.view.frame.maxY - 100, width: 80, height: 80))
+        lockView.setView()
         view.addSubview(lockView)
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.draggedView))
         lockView.isUserInteractionEnabled = true
@@ -189,9 +255,9 @@ class MainViewController : BaseViewController, WKUIDelegate {
             
             print(verifyUrl(urlString: text))
             if text == "" {
-                Common.showToast(message: "URL 주소를 입력해주세요")
+                Common.showToast(message: R.string.Message_04)
             }else if !verifyUrl(urlString: text){
-                Common.showToast(message: "URL 형식을 입력하세요.")
+                Common.showToast(message: R.string.Message_05)
             }else {
                 view.endEditing(true)
                 
@@ -205,7 +271,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
                     
                     var urlName = ""
                     if text.components(separatedBy: ".").count < 2 {
-                        urlName = "?"
+                        urlName = R.string.Basic_shortcuts
                     }else {
                         urlName = text.components(separatedBy: ".")[1]
                     }
@@ -260,7 +326,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
             self.webView.load(URLRequest(url: url!))
             self.view.endEditing(true)
         }else {
-            Common.showToast(message: "URL 형식을 입력하세요.")
+            Common.showToast(message: R.string.Message_05)
         }
     }
     @IBAction func sideMenuAction(_ sender: Any) {
@@ -276,7 +342,12 @@ class MainViewController : BaseViewController, WKUIDelegate {
     
     func setWebView(){
         let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.allowsInlineMediaPlayback = true
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            webConfiguration.allowsInlineMediaPlayback = false
+        }else {
+            webConfiguration.allowsInlineMediaPlayback = true
+        }
         
         webView = WKWebView(frame: webContainerView.frame, configuration: webConfiguration)
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -326,7 +397,10 @@ class MainViewController : BaseViewController, WKUIDelegate {
         if let _ = UIApplication.topMostViewController as? MainViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
                 if let topController = UIApplication.topMostViewController{
-                    topController.view.addSubview(self.lockView)
+                    if topController.view.viewWithTag(1000) == nil {
+                        self.appDelegate.shouldSupportAllOrientation = false
+                        topController.view.addSubview(self.lockView)
+                    }
                 }
             }
         }
@@ -338,7 +412,10 @@ class MainViewController : BaseViewController, WKUIDelegate {
         if let _ = UIApplication.topMostViewController as? MainViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
                 if let topController = UIApplication.topMostViewController{
-                    topController.view.addSubview(self.lockView)
+                    if topController.view.viewWithTag(1000) == nil {
+                        self.appDelegate.shouldSupportAllOrientation = true
+                        topController.view.addSubview(self.lockView)
+                    }
                 }
             }
         }
@@ -354,7 +431,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
     func showLoding(){
         if view.viewWithTag(9999) == nil {
             activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-            activityIndicator.color = UIColor.blue
+            activityIndicator.color = UIColor.colorFromHex(65585)
             activityIndicator.frame = CGRect(x: view.frame.midX-25, y: view.frame.midY-25, width: 50, height: 50)
             activityIndicator.hidesWhenStopped = true
             activityIndicator.startAnimating()
@@ -392,6 +469,7 @@ extension MainViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
         if let urlString = webView.url?.absoluteString {
+            lastWebViewUrl = urlString
             urlTextFiled.text = urlString
             var lastRemoveUrl = urlString
             var mobileUrl = urlString
@@ -528,6 +606,9 @@ extension MainViewController : popupConfirmProtocol {
             }
         }
     }
-    
+}
+
+
+class AVFullScreenViewController : UIViewController {
     
 }

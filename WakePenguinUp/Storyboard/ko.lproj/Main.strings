@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "L"; ObjectID = "0fU-1O-vAg"; */
+"0fU-1O-vAg.text" = "L";
+
+/* Class = "UIViewController"; title = "수정"; ObjectID = "9em-XR-4jS"; */
+"9em-XR-4jS.title" = "수정";
+
+/* Class = "UILabel"; text = "해당 사이트에 연결할 수 없습니다.\nURL 주소를 확인해주세요."; ObjectID = "FP7-4U-pIX"; */
+"FP7-4U-pIX.text" = "해당 사이트에 연결할 수 없습니다.\nURL 주소를 확인해주세요.";
+
+/* Class = "UILabel"; text = "바 \n로 \n가 \n기\n를 \n \n등 \n록  \n해 \n주 \n세 \n요"; ObjectID = "Fz6-kg-Gl2"; */
+"Fz6-kg-Gl2.text" = "바 \n로 \n가 \n기\n를 \n \n등 \n록  \n해 \n주 \n세 \n요";
+
+/* Class = "UILabel"; text = "네이버"; ObjectID = "Gn2-kk-GBZ"; */
+"Gn2-kk-GBZ.text" = "네이버";
+
+/* Class = "UILabel"; text = "오른쪽 추가 버튼을 클릭하여 \n바로가기를 등록해 주세요."; ObjectID = "bFl-Pv-VBg"; */
+"bFl-Pv-VBg.text" = "오른쪽 추가 버튼을 클릭하여 \n바로가기를 등록해 주세요.";
+
+/* Class = "UINavigationItem"; title = "수정"; ObjectID = "bay-nH-V36"; */
+"bay-nH-V36.title" = "수정";
+
+/* Class = "UITextField"; placeholder = "URL 주소 입력"; ObjectID = "o3n-JP-wNf"; */
+"o3n-JP-wNf.placeholder" = "URL 주소 입력";
+
+/* Class = "UILabel"; text = "L"; ObjectID = "rOh-uv-rNa"; */
+"rOh-uv-rNa.text" = "L";
+
+/* Class = "UILabel"; text = "바로가기 항목이  비어있습니다."; ObjectID = "t9p-f3-0jG"; */
+"t9p-f3-0jG.text" = "바로가기 항목이  비어있습니다.";
+
+/* Class = "UILabel"; text = "네이버"; ObjectID = "xbt-Jm-RSm"; */
+"xbt-Jm-RSm.text" = "네이버";

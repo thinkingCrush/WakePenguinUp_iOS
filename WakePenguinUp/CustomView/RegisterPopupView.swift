@@ -72,7 +72,7 @@ class RegisterPopupView : UIView{
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.frame.size.width, height: 30))
         //create left side empty space so that done button set on right side
         let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
-        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "닫기", style: .done, target: self, action: #selector(doneButtonAction))
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: R.string.Basic_close, style: .done, target: self, action: #selector(doneButtonAction))
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
         
@@ -118,7 +118,7 @@ class RegisterPopupView : UIView{
         
         if check {
             savedEditName = name
-            actionButton.setTitle("수정", for: .normal)
+            actionButton.setTitle(R.string.Basic_edit, for: .normal)
             
             let userDefault = UserDefaults.standard
             if let decoded = userDefault.data(forKey: "FavoritesData") {
@@ -135,14 +135,14 @@ class RegisterPopupView : UIView{
                 }
             }
         }else {
-            actionButton.setTitle("저장", for: .normal)
+            actionButton.setTitle(R.string.Basic_save, for: .normal)
             
             let urlArray = url.components(separatedBy: ".")
-            var thumbnailFirstText : Character = "바"
+            var thumbnailFirstText : Character = R.string.Basic_shortcuts.first!
             if urlArray.count > 1 {
                 thumbnailFirstText = url.components(separatedBy: ".")[1].first ?? "?"
             }else {
-                thumbnailFirstText = "바"
+                thumbnailFirstText = R.string.Basic_shortcuts.first!
             }
             thumnailText.text = "\(thumbnailFirstText.uppercased())"
             thumnailView.backgroundColor = UIColor.random

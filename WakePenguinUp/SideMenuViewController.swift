@@ -48,6 +48,7 @@ class Favorites : NSObject, NSCoding{
 
 class SideMenuViewController : BaseViewController {
     
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var favoritesList : [Favorites] = []
@@ -56,6 +57,7 @@ class SideMenuViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFont()
         setTableView()
         favoritesDataSet()
     }
@@ -80,6 +82,9 @@ class SideMenuViewController : BaseViewController {
         emptyView.isHidden = false
     }
  
+    func setFont(){
+        emptyLabel.text = R.string.Message_03
+    }
     func favoritesDataSet(){
         favoritesList = []
         let userDefault = UserDefaults.standard
@@ -131,6 +136,7 @@ extension SideMenuViewController : UITableViewDataSource {
         }
         let item = favoritesList[indexPath.row]
         getUrlDelegate?.getURL(url: item.url)
+        dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

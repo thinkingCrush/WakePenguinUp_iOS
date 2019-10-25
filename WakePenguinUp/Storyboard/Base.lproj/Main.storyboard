@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gg2-i1-uOb">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -13,14 +13,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TutorialPageViewController" customModule="WPU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-5l-4c3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYc-th-a4V" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -31,7 +32,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.76470588235294112" green="0.84705882352941175" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TBe-5l-4c3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1no-2E-AB6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBe-5l-4c3" secondAttribute="trailing" id="CKW-uo-UDf"/>
@@ -53,20 +54,20 @@
             <objects>
                 <viewController storyboardIdentifier="MainVC" id="HTZ-L4-WuV" customClass="MainViewController" customModule="WPU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpr-eD-SgH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1S2-fM-nhb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zo8-BF-c9m" customClass="ARoundView" customModule="WPU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkT-g9-Ljv">
-                                                <rect key="frame" x="0.0" y="0.0" width="364.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="281.5" height="44"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL 주소 입력" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o3n-JP-wNf">
-                                                        <rect key="frame" x="15" y="5" width="295.5" height="34"/>
+                                                        <rect key="frame" x="15" y="5" width="223" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
                                                         <connections>
@@ -75,22 +76,23 @@
                                                         </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdX-8V-r31">
-                                                        <rect key="frame" x="315.5" y="0.0" width="44" height="44"/>
+                                                        <rect key="frame" x="243" y="0.0" width="33.5" height="44"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_star_off" translatesAutoresizingMaskIntoConstraints="NO" id="jFQ-26-1Lj">
-                                                                <rect key="frame" x="3.5" y="9" width="37" height="26"/>
+                                                                <rect key="frame" x="2.5" y="12" width="28.5" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="jFQ-26-1Lj" secondAttribute="height" multiplier="10:7" id="F8e-hC-BS6"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-te-lDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="44"/>
                                                                 <connections>
                                                                     <action selector="favoritesAddAction:" destination="HTZ-L4-WuV" eventType="touchUpInside" id="EPX-9G-4ma"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="jFQ-26-1Lj" firstAttribute="height" secondItem="xdX-8V-r31" secondAttribute="height" multiplier="0.8" id="13p-ui-XQZ"/>
                                                             <constraint firstAttribute="bottom" secondItem="JSe-te-lDC" secondAttribute="bottom" id="8WY-dI-m8h"/>
                                                             <constraint firstItem="jFQ-26-1Lj" firstAttribute="centerX" secondItem="xdX-8V-r31" secondAttribute="centerX" id="CKv-Uz-3DD"/>
                                                             <constraint firstItem="JSe-te-lDC" firstAttribute="top" secondItem="xdX-8V-r31" secondAttribute="top" id="VFV-w1-Xqj"/>
@@ -99,6 +101,16 @@
                                                             <constraint firstItem="JSe-te-lDC" firstAttribute="leading" secondItem="xdX-8V-r31" secondAttribute="leading" id="rEv-h2-8m0"/>
                                                             <constraint firstAttribute="trailing" secondItem="JSe-te-lDC" secondAttribute="trailing" id="tsi-1T-hvW"/>
                                                         </constraints>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <exclude reference="13p-ui-XQZ"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <mask key="constraints">
+                                                                <exclude reference="aa9-sH-m4j"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -113,22 +125,23 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8O7-vr-pKv">
-                                                <rect key="frame" x="364.5" y="0.0" width="49.5" height="44"/>
+                                                <rect key="frame" x="281.5" y="0.0" width="38.5" height="44"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_favorites_list" translatesAutoresizingMaskIntoConstraints="NO" id="vOB-KO-heh">
-                                                        <rect key="frame" x="0.0" y="9" width="49.5" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="12" width="38.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="vOB-KO-heh" secondAttribute="height" multiplier="15:8" id="0Rz-6O-NJi"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFX-JW-n6s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="49.5" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="44"/>
                                                         <connections>
                                                             <action selector="sideMenuAction:" destination="HTZ-L4-WuV" eventType="touchUpInside" id="MTv-gM-s95"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="vOB-KO-heh" firstAttribute="height" secondItem="8O7-vr-pKv" secondAttribute="height" multiplier="0.8" id="2qX-hp-8Tp"/>
                                                     <constraint firstItem="fFX-JW-n6s" firstAttribute="leading" secondItem="8O7-vr-pKv" secondAttribute="leading" id="BOC-cN-qIa"/>
                                                     <constraint firstItem="vOB-KO-heh" firstAttribute="centerY" secondItem="8O7-vr-pKv" secondAttribute="centerY" id="DNd-yj-Kmg"/>
                                                     <constraint firstItem="vOB-KO-heh" firstAttribute="centerX" secondItem="8O7-vr-pKv" secondAttribute="centerX" id="SYO-Nn-M5E"/>
@@ -137,6 +150,16 @@
                                                     <constraint firstItem="vOB-KO-heh" firstAttribute="width" secondItem="8O7-vr-pKv" secondAttribute="width" id="pVw-Nm-NIL"/>
                                                     <constraint firstItem="fFX-JW-n6s" firstAttribute="top" secondItem="8O7-vr-pKv" secondAttribute="top" id="wbx-0c-k3q"/>
                                                 </constraints>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <exclude reference="2qX-hp-8Tp"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="pVw-Nm-NIL"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,20 +181,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-Ti-Ba0">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-sh-gvZ">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로가기 항목이 비어있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9p-f3-0jG">
-                                                <rect key="frame" x="10" y="212.5" width="394" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바로가기 항목이  비어있습니다." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9p-f3-0jG">
+                                                <rect key="frame" x="10" y="40.5" width="300" height="72"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_penguin_h" translatesAutoresizingMaskIntoConstraints="NO" id="vtv-KX-KD0">
-                                                <rect key="frame" x="41.5" y="298.5" width="331" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_penguin_h_2" translatesAutoresizingMaskIntoConstraints="NO" id="vtv-KX-KD0">
+                                                <rect key="frame" x="0.0" y="132.5" width="320" height="171"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vtv-KX-KD0" secondAttribute="height" multiplier="15:8" id="EfD-Zf-hCE"/>
                                                 </constraints>
@@ -181,18 +204,18 @@
                                         <constraints>
                                             <constraint firstItem="vtv-KX-KD0" firstAttribute="centerY" secondItem="AZm-sh-gvZ" secondAttribute="centerY" id="7Er-Y2-1OW"/>
                                             <constraint firstItem="t9p-f3-0jG" firstAttribute="centerX" secondItem="AZm-sh-gvZ" secondAttribute="centerX" id="EiM-no-Ks6"/>
-                                            <constraint firstItem="vtv-KX-KD0" firstAttribute="width" secondItem="AZm-sh-gvZ" secondAttribute="width" multiplier="0.8" id="Sb6-RF-LeR"/>
+                                            <constraint firstItem="vtv-KX-KD0" firstAttribute="width" secondItem="AZm-sh-gvZ" secondAttribute="width" id="Sb6-RF-LeR"/>
                                             <constraint firstItem="vtv-KX-KD0" firstAttribute="centerX" secondItem="AZm-sh-gvZ" secondAttribute="centerX" id="c0j-Ot-xcd"/>
-                                            <constraint firstItem="vtv-KX-KD0" firstAttribute="top" secondItem="t9p-f3-0jG" secondAttribute="bottom" constant="50" id="sKT-7k-QB6"/>
+                                            <constraint firstItem="vtv-KX-KD0" firstAttribute="top" secondItem="t9p-f3-0jG" secondAttribute="bottom" constant="20" id="sKT-7k-QB6"/>
                                             <constraint firstAttribute="trailing" secondItem="t9p-f3-0jG" secondAttribute="trailing" constant="10" id="tMJ-Iv-g8v"/>
                                             <constraint firstItem="t9p-f3-0jG" firstAttribute="leading" secondItem="AZm-sh-gvZ" secondAttribute="leading" constant="10" id="wgj-Hy-ssX"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQ8-7z-67N">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FP7-4U-pIX">
-                                                <rect key="frame" x="10" y="177.5" width="394" height="67"/>
+                                                <rect key="frame" x="10" y="26" width="300" height="100.5"/>
                                                 <string key="text">해당 사이트에 연결할 수 없습니다.
 URL 주소를 확인해주세요.</string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
@@ -200,7 +223,7 @@ URL 주소를 확인해주세요.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_penguin_w" translatesAutoresizingMaskIntoConstraints="NO" id="mQu-Rf-FsH">
-                                                <rect key="frame" x="103.5" y="294.5" width="207" height="185"/>
+                                                <rect key="frame" x="80" y="146.5" width="160" height="143"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mQu-Rf-FsH" secondAttribute="height" multiplier="37:33" id="0pL-BT-OS9"/>
                                                 </constraints>
@@ -214,7 +237,7 @@ URL 주소를 확인해주세요.</string>
                                             <constraint firstItem="FP7-4U-pIX" firstAttribute="centerX" secondItem="cQ8-7z-67N" secondAttribute="centerX" id="ghw-uT-l1G"/>
                                             <constraint firstItem="FP7-4U-pIX" firstAttribute="leading" secondItem="cQ8-7z-67N" secondAttribute="leading" constant="10" id="jAH-QZ-QKJ"/>
                                             <constraint firstItem="mQu-Rf-FsH" firstAttribute="width" secondItem="cQ8-7z-67N" secondAttribute="width" multiplier="0.5" id="jQf-GV-Aaa"/>
-                                            <constraint firstItem="mQu-Rf-FsH" firstAttribute="top" secondItem="FP7-4U-pIX" secondAttribute="bottom" constant="50" id="kdl-Qa-zL2"/>
+                                            <constraint firstItem="mQu-Rf-FsH" firstAttribute="top" secondItem="FP7-4U-pIX" secondAttribute="bottom" constant="20" id="kdl-Qa-zL2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -237,7 +260,7 @@ URL 주소를 확인해주세요.</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" tag="9909" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5L-6Z-Bbe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -258,6 +281,8 @@ URL 주소를 확인해주세요.</string>
                     <connections>
                         <outlet property="darkBackgroundView" destination="Q5L-6Z-Bbe" id="fv4-jh-Nv7"/>
                         <outlet property="emptyFavoritesView" destination="AZm-sh-gvZ" id="OEI-sJ-YhG"/>
+                        <outlet property="emptyLabel" destination="t9p-f3-0jG" id="tnL-sJ-xYC"/>
+                        <outlet property="errorLabel" destination="FP7-4U-pIX" id="ozJ-VN-emu"/>
                         <outlet property="errorView" destination="cQ8-7z-67N" id="Gu0-y3-FxU"/>
                         <outlet property="favoritesStarImage" destination="jFQ-26-1Lj" id="6pC-Zf-660"/>
                         <outlet property="mainContainerView" destination="1S2-fM-nhb" id="xJb-iG-wjx"/>
@@ -276,7 +301,7 @@ URL 주소를 확인해주세요.</string>
         <!--Navigation Controller-->
         <scene sceneID="VeJ-8b-exa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gg2-i1-uOb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNaviVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gg2-i1-uOb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NJc-QD-dl4">
                         <autoresizingMask key="autoresizingMask"/>
@@ -295,17 +320,17 @@ URL 주소를 확인해주세요.</string>
             <objects>
                 <viewController id="Key-kl-v2z" customClass="SideMenuViewController" customModule="WPU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q01-9C-34F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cew-Vk-dOF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McY-Q3-k89">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPv-dz-fmu">
-                                                <rect key="frame" x="382.5" y="11" width="21.5" height="22"/>
+                                                <rect key="frame" x="288.5" y="11" width="21.5" height="22"/>
                                                 <state key="normal" image="icon_settings2"/>
                                                 <connections>
                                                     <action selector="editAction:" destination="Key-kl-v2z" eventType="touchUpInside" id="Hrr-Y6-7UT"/>
@@ -320,14 +345,14 @@ URL 주소를 확인해주세요.</string>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-P4-cvj">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesItemCellID" rowHeight="106" id="YU2-3T-1hh" customClass="FavoritesItemCell" customModule="WPU" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                                <rect key="frame" x="0.0" y="28" width="320" height="106"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YU2-3T-1hh" id="nwg-6g-XRf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRs-n8-dKI">
@@ -362,10 +387,10 @@ URL 주소를 확인해주세요.</string>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAE-uN-i0W">
-                                                            <rect key="frame" x="70" y="0.0" width="344" height="106"/>
+                                                            <rect key="frame" x="70" y="0.0" width="250" height="106"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네이버" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbt-Jm-RSm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="106"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="106"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -399,10 +424,10 @@ URL 주소를 확인해주세요.</string>
                                         </prototypes>
                                     </tableView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eso-Ky-wVB">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz6-kg-Gl2">
-                                                <rect key="frame" x="187.5" y="189" width="39" height="430"/>
+                                                <rect key="frame" x="140.5" y="3" width="39" height="430"/>
                                                 <string key="text">바 
 로 
 가 
@@ -454,6 +479,7 @@ URL 주소를 확인해주세요.</string>
                     </view>
                     <navigationItem key="navigationItem" id="7Ue-93-rys"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="Fz6-kg-Gl2" id="yai-wb-oXe"/>
                         <outlet property="emptyView" destination="Eso-Ky-wVB" id="nhm-bw-7d4"/>
                         <outlet property="tableView" destination="kOp-P4-cvj" id="CbL-50-BYZ"/>
                         <segue destination="RaK-A6-IJv" kind="unwind" identifier="unwindToSplash" unwindAction="gotoSplahViewController:" id="Lnt-gj-14i"/>
@@ -469,21 +495,21 @@ URL 주소를 확인해주세요.</string>
             <objects>
                 <viewController storyboardIdentifier="EditVC" title="수정" id="9em-XR-4jS" customClass="FavoritesEditViewController" customModule="WPU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5yG-C9-mCe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C42-vf-nIM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Zq-Xt-Ixc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesItemCellID" rowHeight="106" id="zwu-u3-qXv" customClass="FavoritesItemCell" customModule="WPU" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                                <rect key="frame" x="0.0" y="28" width="320" height="106"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zwu-u3-qXv" id="pSU-nm-3Rl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVj-Ce-u5g">
@@ -518,10 +544,10 @@ URL 주소를 확인해주세요.</string>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErO-ZQ-dta">
-                                                            <rect key="frame" x="70" y="0.0" width="344" height="106"/>
+                                                            <rect key="frame" x="70" y="0.0" width="250" height="106"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네이버" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn2-kk-GBZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="106"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="106"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -555,25 +581,18 @@ URL 주소를 확인해주세요.</string>
                                         </prototypes>
                                     </tableView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiB-FW-Jbm">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow_top" translatesAutoresizingMaskIntoConstraints="NO" id="0Xn-k4-YoL">
-                                                <rect key="frame" x="364" y="25" width="40" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="7dV-sx-uET"/>
-                                                    <constraint firstAttribute="width" secondItem="0Xn-k4-YoL" secondAttribute="height" multiplier="2:3" id="pgM-XD-AsG"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFl-Pv-VBg">
-                                                <rect key="frame" x="10" y="95" width="394" height="72"/>
+                                                <rect key="frame" x="10" y="-9" width="300" height="143.5"/>
                                                 <string key="text">오른쪽 추가 버튼을 클릭하여 
 바로가기를 등록해 주세요.</string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_penguin_h" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-yj-mUK">
-                                                <rect key="frame" x="41.5" y="320.5" width="331" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_penguin_h_2" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-yj-mUK">
+                                                <rect key="frame" x="0.0" y="154.5" width="320" height="171"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Pq2-yj-mUK" secondAttribute="height" multiplier="15:8" id="JwF-e4-GbD"/>
                                                 </constraints>
@@ -581,13 +600,11 @@ URL 주소를 확인해주세요.</string>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="bFl-Pv-VBg" firstAttribute="top" secondItem="0Xn-k4-YoL" secondAttribute="bottom" constant="10" id="3Po-Or-cRT"/>
                                             <constraint firstItem="Pq2-yj-mUK" firstAttribute="centerY" secondItem="NiB-FW-Jbm" secondAttribute="centerY" id="EbR-WW-l89"/>
                                             <constraint firstItem="bFl-Pv-VBg" firstAttribute="leading" secondItem="NiB-FW-Jbm" secondAttribute="leading" constant="10" id="Itu-C1-hnD"/>
                                             <constraint firstItem="Pq2-yj-mUK" firstAttribute="centerX" secondItem="NiB-FW-Jbm" secondAttribute="centerX" id="TcM-OU-jHB"/>
-                                            <constraint firstItem="0Xn-k4-YoL" firstAttribute="top" secondItem="NiB-FW-Jbm" secondAttribute="top" constant="25" id="c0j-On-goz"/>
-                                            <constraint firstItem="Pq2-yj-mUK" firstAttribute="width" secondItem="NiB-FW-Jbm" secondAttribute="width" multiplier="0.8" id="ldc-ow-R3g"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Xn-k4-YoL" secondAttribute="trailing" constant="10" id="mOc-SJ-HpN"/>
+                                            <constraint firstItem="Pq2-yj-mUK" firstAttribute="top" secondItem="bFl-Pv-VBg" secondAttribute="bottom" constant="20" id="eiF-s5-1LE"/>
+                                            <constraint firstItem="Pq2-yj-mUK" firstAttribute="width" secondItem="NiB-FW-Jbm" secondAttribute="width" id="ldc-ow-R3g"/>
                                             <constraint firstItem="bFl-Pv-VBg" firstAttribute="centerX" secondItem="NiB-FW-Jbm" secondAttribute="centerX" id="ulq-95-Jns"/>
                                             <constraint firstAttribute="trailing" secondItem="bFl-Pv-VBg" secondAttribute="trailing" constant="10" id="vxg-AH-1it"/>
                                         </constraints>
@@ -606,7 +623,7 @@ URL 주소를 확인해주세요.</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" tag="9909" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5z-7T-kFB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -623,11 +640,12 @@ URL 주소를 확인해주세요.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kCk-M9-UVM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="수정" id="bay-nH-V36"/>
+                    <navigationItem key="navigationItem" id="bay-nH-V36"/>
                     <connections>
                         <outlet property="darkBackgroundView" destination="X5z-7T-kFB" id="yx9-Q8-bxA"/>
-                        <outlet property="emptyArrow" destination="0Xn-k4-YoL" id="4Sz-Mc-aaF"/>
                         <outlet property="emptyView" destination="NiB-FW-Jbm" id="SX7-Mf-bRN"/>
+                        <outlet property="helpLabel" destination="bFl-Pv-VBg" id="1kJ-0e-HjA"/>
+                        <outlet property="navigationTitleLabel" destination="bay-nH-V36" id="oFQ-Xc-XnN"/>
                         <outlet property="tableView" destination="8Zq-Xt-Ixc" id="Vby-G0-Dbe"/>
                     </connections>
                 </viewController>
@@ -658,9 +676,8 @@ URL 주소를 확인해주세요.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="icon_arrow_top" width="43.333332061767578" height="66.333335876464844"/>
         <image name="icon_favorites_list" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="icon_penguin_h" width="147.66667175292969" height="186"/>
+        <image name="icon_penguin_h_2" width="166.66667175292969" height="200"/>
         <image name="icon_penguin_w" width="115.66666412353516" height="173.66667175292969"/>
         <image name="icon_settings2" width="21.333333969116211" height="21.333333969116211"/>
         <image name="icon_star_off" width="21.333333969116211" height="21.333333969116211"/>

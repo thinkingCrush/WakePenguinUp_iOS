@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  WakePenguinUp
+
+  Created by 무릉 on 24/10/2019.
+  Copyright © 2019 lgbin. All rights reserved.
+*/
+
+"item_youtube" = "유튜브";
+"item_naver" = "네이버";
+"item_google" = "구글";
+"basic_confirm" = "확인";
+"basic_edit" = "수정";
+"basic_cancel" = "취소";
+"basic_close" = "닫기";
+"basic_save" = "저장";
+"basic_delete" = "삭제";
+"basic_shortcuts" = "바로가기";
+"message_01" = "해당 사이트에 연결할 수 없습니다.\nURL 주소를 확인해주세요";
+"message_02" = "오른쪽 추가 버튼을 클릭하여 바로가기를 등록해 주세요";
+"message_03" = "바\n로\n가\n기\n를\n\n등\n록\n해\n주\n세\n요";
+"message_04" = "URL 주소를 입력해주세요";
+"message_05" = "URL 형식을 입력하세요";
+"message_06" = "바로가기 항목이 비어있습니다";
+"message_07" = "URL 주소 입력";
+

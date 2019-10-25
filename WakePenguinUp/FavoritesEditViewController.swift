@@ -14,17 +14,24 @@ protocol EditDelegateProtocol {
 }
 class FavoritesEditViewController: BaseViewController {
     
+    @IBOutlet weak var navigationTitleLabel: UINavigationItem!
+    @IBOutlet weak var helpLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var emptyArrow: UIImageView!
     @IBOutlet weak var darkBackgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
     var favoritesList : [Favorites] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFont()
         setTableView()
         favoritesDataSet()
     }
         
+    
+    func setFont(){
+        helpLabel.text = R.string.Message_02
+        navigationTitleLabel.title = R.string.Basic_edit
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.navigationController?.isNavigationBarHidden = false
         let buttonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(addTapped))
@@ -41,7 +48,7 @@ class FavoritesEditViewController: BaseViewController {
             popupView.alpha = 1
             popupView.transform = CGAffineTransform(scaleX: 0.8, y: 1.2)
             
-            popupView.setView(name: "바로가기", url: "", check: false)
+            popupView.setView(name: R.string.Basic_shortcuts, url: "", check: false)
             popupView.delegate = self
             navigationController?.view.addSubview(popupView)
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -54,24 +61,8 @@ class FavoritesEditViewController: BaseViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.navigationController?.isNavigationBarHidden = true
-        if let view = self.navigationController?.view.viewWithTag(1000) {
-            view
-        }
-//        if navigationController?.view.viewWithTag(10000) != nil {
-//            if let view = navigationController?.view.viewWithTag(10000) {
-//                view.removeFromSuperview()
-//            }
-//        }
-    }
-    
     func setEmptyView(){
         emptyView.isHidden = false
-        self.emptyArrow.center = CGPoint(x: self.emptyArrow.center.x, y: self.emptyArrow.center.y + 10)
-        UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse,.repeat], animations: {
-            self.emptyArrow.center = CGPoint(x: self.emptyArrow.center.x, y: self.emptyArrow.center.y + 20)
-        }, completion: nil)
     }
     
     func setTableView(){
@@ -145,7 +136,7 @@ extension FavoritesEditViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        let delete = UITableViewRowAction(style: .destructive, title: "삭제") { (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: R.string.Basic_delete) { (action, indexPath) in
             // delete item at indexPath
             self.favoritesList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -170,7 +161,7 @@ extension FavoritesEditViewController : UITableViewDataSource {
             
         }
 
-        let modify = UITableViewRowAction(style: .default, title: "수정") { (action, indexPath) in
+        let modify = UITableViewRowAction(style: .default, title: R.string.Basic_edit) { (action, indexPath) in
             // share item at indexPath
             print("I want to share: \(self.favoritesList[indexPath.row])")
             let item = self.favoritesList[indexPath.row]

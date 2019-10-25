@@ -61,6 +61,7 @@ class LockView: UIView {
         }else {
             isCancel = true
         }
+                
     }
     
 
@@ -127,7 +128,30 @@ class LockView: UIView {
             self.lockImage.image = UIImage(named: "icon_lock_opened")
         })
         
+        if let topController = UIApplication.topMostViewController{
+            if topController.view.viewWithTag(10001) == nil {
+                let frame = CGRect(origin: topController.view.center, size: CGSize(width: 55, height: 85))
+                guard let sleepImageView = UIImageView.fromGif(frame: frame, resourceName: "icon_penguin_sleep_gif") else { return }
+                sleepImageView.translatesAutoresizingMaskIntoConstraints = false
+                sleepImageView.tag = 10001
+                sleepImageView.animationDuration = 1
+                topController.view.addSubview(sleepImageView)
+                
+                sleepImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
+                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -10).isActive = true
+                sleepImageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
+                sleepImageView.heightAnchor.constraint(equalToConstant: 85).isActive = true
+                sleepImageView.startAnimating()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+                    sleepImageView.removeFromSuperview()
+                }
+            }
+        }
+        
     }
+    
+   
     
 }
 

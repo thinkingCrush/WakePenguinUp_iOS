@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12084D6D23617AAA0087477A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12084D6F23617AAA0087477A /* Localizable.strings */; };
+		12084D7223617D730087477A /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12084D7123617D730087477A /* Resources.swift */; };
 		120C5A99233226F7009AA613 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C5A98233226F7009AA613 /* LockView.swift */; };
 		120C5A9B233226FF009AA613 /* LockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 120C5A9A233226FF009AA613 /* LockView.xib */; };
 		120EA8EE2334508B00B94771 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120EA8ED2334508B00B94771 /* SideMenuViewController.swift */; };
@@ -23,6 +25,7 @@
 		12100E042321435C0081F8A2 /* WakePenguinUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12100E032321435C0081F8A2 /* WakePenguinUpUITests.swift */; };
 		122018442341FAC600A9FA41 /* ARoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122018432341FAC600A9FA41 /* ARoundButton.swift */; };
 		123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */; };
+		12426CA723604695004A4929 /* icon_penguin_sleep_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */; };
 		125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */; };
 		129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6C43233075A80026CDE3 /* ARoundView.swift */; };
 		12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F80177232F6BC20055C4D0 /* MainViewController.swift */; };
@@ -52,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12084D6923617A690087477A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		12084D6A23617A690087477A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		12084D6E23617AAA0087477A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		12084D7023617AAE0087477A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		12084D7123617D730087477A /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		120C5A98233226F7009AA613 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		120C5A9A233226FF009AA613 /* LockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockView.xib; sourceTree = "<group>"; };
 		120EA8ED2334508B00B94771 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 		12100E052321435C0081F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122018432341FAC600A9FA41 /* ARoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundButton.swift; sourceTree = "<group>"; };
 		123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
+		12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon_penguin_sleep_gif.gif; sourceTree = "<group>"; };
 		125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemCell.swift; sourceTree = "<group>"; };
 		129B6C43233075A80026CDE3 /* ARoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundView.swift; sourceTree = "<group>"; };
 		12F80177232F6BC20055C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +192,14 @@
 			path = WakePenguinUpUITests;
 			sourceTree = "<group>";
 		};
+		12426CA523604684004A4929 /* GIFResources */ = {
+			isa = PBXGroup;
+			children = (
+				12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */,
+			);
+			path = GIFResources;
+			sourceTree = "<group>";
+		};
 		12F8017B232F6C2D0055C4D0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +217,11 @@
 		12F8017C232F6C340055C4D0 /* SuppoertFiles */ = {
 			isa = PBXGroup;
 			children = (
+				12426CA523604684004A4929 /* GIFResources */,
 				12100DEA2321435C0081F8A2 /* Assets.xcassets */,
 				12100DEF2321435C0081F8A2 /* Info.plist */,
+				12084D6F23617AAA0087477A /* Localizable.strings */,
+				12084D7123617D730087477A /* Resources.swift */,
 			);
 			path = SuppoertFiles;
 			sourceTree = "<group>";
@@ -340,6 +360,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 12100DD72321435B0081F8A2;
 			productRefGroup = 12100DE12321435B0081F8A2 /* Products */;
@@ -359,7 +380,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12100DEE2321435C0081F8A2 /* LaunchScreen.storyboard in Resources */,
+				12426CA723604695004A4929 /* icon_penguin_sleep_gif.gif in Resources */,
 				120C5A9B233226FF009AA613 /* LockView.xib in Resources */,
+				12084D6D23617AAA0087477A /* Localizable.strings in Resources */,
 				12100DEB2321435C0081F8A2 /* Assets.xcassets in Resources */,
 				123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */,
 				12100DE92321435B0081F8A2 /* Main.storyboard in Resources */,
@@ -466,6 +489,7 @@
 				125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */,
 				120EA8F223346CAF00B94771 /* FavoritesEditViewController.swift in Sources */,
 				12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */,
+				12084D7223617D730087477A /* Resources.swift in Sources */,
 				120EA8EE2334508B00B94771 /* SideMenuViewController.swift in Sources */,
 				12F8017A232F6BE30055C4D0 /* BaseViewController.swift in Sources */,
 				120EA8F72334AC7A00B94771 /* SBCardPopupViewController.swift in Sources */,
@@ -511,10 +535,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		12084D6F23617AAA0087477A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12084D6E23617AAA0087477A /* en */,
+				12084D7023617AAE0087477A /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		12100DE72321435B0081F8A2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				12100DE82321435B0081F8A2 /* Base */,
+				12084D6923617A690087477A /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -523,6 +557,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				12100DED2321435C0081F8A2 /* Base */,
+				12084D6A23617A690087477A /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -534,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -595,6 +631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -653,12 +690,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.Tcrush.WakePenguinUp;
 				PRODUCT_NAME = WPU;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -674,12 +713,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.Tcrush.WakePenguinUp;
 				PRODUCT_NAME = WPU;
 				PROVISIONING_PROFILE_SPECIFIER = "";

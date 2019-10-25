@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  WakePenguinUp
+
+  Created by 무릉 on 24/10/2019.
+  Copyright © 2019 lgbin. All rights reserved.
+*/
+
+
+"item_youtube" = "Youtube";
+"item_naver" = "Naver";
+"item_google" = "Google";
+"basic_confirm" = "Comfirm";
+"basic_edit" = "Edit";
+"basic_cancel" = "Cancel";
+"basic_close" = "Close";
+"basic_save" = "Save";
+"basic_delete" = "Delete";
+"basic_shortcuts" = "Shortcuts";
+"message_01" = "Could not connect to this site \n Please check the URL address";
+"message_02" = "Click the Add button on the right to register a shortcut";
+"message_03" = "E\nM\nP\nT\nY";
+"message_04" = "Please enter a URL address";
+"message_05" = "Please enter a URL format";
+"message_06" = "Shortcut item is empty";
+"message_07" = "Enter URL address";

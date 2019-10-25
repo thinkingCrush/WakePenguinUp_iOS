@@ -14,8 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     static var isLock = false
 
+    var shouldSupportAllOrientation = false
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Thread.sleep(forTimeInterval: 0.5)
         
         let navigationBarApperace = UINavigationBar.appearance()
         navigationBarApperace.tintColor = UIColor.black
@@ -28,7 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        navigationBarApperace.shadowImage = UIImage()
 //        navigationBarApperace.backgroundColor = UIColor.clear
         
-        return true
+        let userDefault = UserDefaults.standard
+        
+        if userDefault.bool(forKey: "isStartApp") {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainNaviVC")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            return true
+        }else {
+            return true
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -52,7 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    //화면회전을 잠그고 고정할 목적의 플래그 변수를 추가한다.
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if (shouldSupportAllOrientation == true){
+            return UIInterfaceOrientationMask.all
+            }
+        return UIInterfaceOrientationMask.portrait
+        
+    }
 
 }
 
