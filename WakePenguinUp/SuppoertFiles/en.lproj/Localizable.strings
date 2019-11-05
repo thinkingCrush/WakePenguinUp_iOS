@@ -6,7 +6,6 @@
   Copyright © 2019 lgbin. All rights reserved.
 */
 
-
 "item_youtube" = "Youtube";
 "item_naver" = "Naver";
 "item_google" = "Google";
@@ -25,3 +24,7 @@
 "message_06" = "Shortcut item is empty";
 "message_07" = "Enter URL address";
 "message_08" = "Shortcuts name";
+"message_09" = "add shortcut";
+"message_10" = "shortcut list";
+"message_11" = "touch lock button";
+"message_12" = "How to use WPU";

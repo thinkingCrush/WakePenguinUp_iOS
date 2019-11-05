@@ -29,6 +29,11 @@ struct R {
         static var Message_06 = "message_06".localized
         static var Message_07 = "message_07".localized
         static var Message_08 = "message_08".localized
+        static var Message_09 = "message_09".localized
+        static var Message_10 = "message_10".localized
+        static var Message_11 = "message_11".localized
+        static var Message_12 = "message_12".localized
+        
         
     }
 }

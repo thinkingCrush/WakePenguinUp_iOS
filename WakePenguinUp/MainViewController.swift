@@ -39,6 +39,12 @@ class MainViewController : BaseViewController, WKUIDelegate {
     @IBOutlet weak var helpStarViewContainer: UIView!
     @IBOutlet weak var helpUrlViewContainer: UIView!
     @IBOutlet weak var helpLockVIewContainer: UIView!
+    @IBOutlet weak var helpMessage_01: UILabel!
+    @IBOutlet weak var helpMessage_02: UILabel!
+    @IBOutlet weak var helpMessage_03: UILabel!
+    @IBOutlet weak var helpMessage_04: UILabel!
+    @IBOutlet weak var helpMessage_05: UILabel!
+    
     
     var lockButton : UIButton?
     var time = 4
@@ -79,6 +85,11 @@ class MainViewController : BaseViewController, WKUIDelegate {
         errorLabel.text = R.string.Message_01
         emptyLabel.text = R.string.Message_06
         urlTextFiled.placeholder = R.string.Message_07
+        helpMessage_01.text = R.string.Message_07
+        helpMessage_02.text = R.string.Message_09
+        helpMessage_03.text = R.string.Message_10
+        helpMessage_04.text = R.string.Message_11
+        helpMessage_05.text = R.string.Message_12
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
