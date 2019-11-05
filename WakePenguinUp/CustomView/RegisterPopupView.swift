@@ -26,6 +26,7 @@ class RegisterPopupView : UIView{
     @IBOutlet weak var favoritesNameTextField: UITextField!
     @IBOutlet weak var favoritesUrlTextField: UITextField!
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var thumnailView: ARoundView!
     @IBOutlet weak var thumnailText: UILabel!
@@ -43,20 +44,29 @@ class RegisterPopupView : UIView{
         // Setup view from .xib file
     }
     
+    
+    func setFont(){
+        cancelButton.setTitle(R.string.Basic_cancel, for: .normal)
+        favoritesNameTextField.placeholder = R.string.Message_08
+    }
+    
     private func commonInit(){
+        
         Bundle.main.loadNibNamed("RegisterPopupView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
+        
+        setFont()
         
         setToolbar()
         thumnailView.cornerRadius = thumnailView.frame.width / 2
         
         setNotificationCenter()
         
-        favoritesNameTextField.isSelected = true
     }
     
     func setNotificationCenter(){
+        
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         

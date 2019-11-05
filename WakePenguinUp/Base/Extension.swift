@@ -95,6 +95,44 @@ extension UIWindow {
                                 lockView.countLabel.text = "3"
                             }
                         })
+                        
+                        if topController.view.viewWithTag(10002) == nil{
+                            if let sleepView = topController.view.viewWithTag(10001) {
+                                sleepView.removeFromSuperview()
+                            }
+                            
+//                            let frame = CGRect(origin: topController.view.center, size: CGSize(width: 88, height: 167.5))
+//                            guard let wakeupImageView = UIImageView.fromGif(frame: frame, resourceName: "icon_penguin_wakeup_gif") else { return }
+                                                        
+                            let wakeupImageView = UIImageView(image: UIImage(named: "icon_penguin_wakeup_1"))
+                            
+                            let images: [UIImage] = [UIImage(named: "icon_penguin_wakeup_1")!, UIImage(named: "icon_penguin_wakeup_2")!]
+                            wakeupImageView.animationImages = images
+
+                            wakeupImageView.translatesAutoresizingMaskIntoConstraints = false
+                            wakeupImageView.tag = 10002
+                            wakeupImageView.animationDuration = 0.6
+                            topController.view.addSubview(wakeupImageView)
+                            
+                            wakeupImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
+                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -30).isActive = true
+                            
+                             if UIDevice.current.orientation.isLandscape {
+                                wakeupImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
+                                wakeupImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.45) * 0.52).isActive = true
+                            }else {
+                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.35).isActive = true
+                                wakeupImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.35) * 1.9).isActive = true
+                            }
+                            
+                            
+                            wakeupImageView.startAnimating()
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                                wakeupImageView.removeFromSuperview()
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -134,7 +172,7 @@ extension UIView {
         let translation = CAKeyframeAnimation(keyPath: "transform.translation.x");
         translation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         translation.values = [-5, 5, -5, 5, -3, 3, -2, 2, 0]
-        
+
         let rotation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         rotation.values = [-5, 5, -5, 5, -3, 3, -2, 2, 0].map {
             ( degrees: Double) -> Double in
@@ -152,7 +190,27 @@ extension UIView {
                 sleepView.removeFromSuperview()
             }
         }
+    }
+    
+    func addDashedBorder() {
+    
+        let color = UIColor.white.cgColor
+        let shapeLayer:CAShapeLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
         
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = color
+        shapeLayer.lineWidth = 2
+        shapeLayer.lineJoin = CAShapeLayerLineJoin.round
+        shapeLayer.lineDashPattern = [6,3]
+        
+        shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: frameSize.width / 2).cgPath
+        
+        
+        self.layer.addSublayer(shapeLayer)
     }
 }
 

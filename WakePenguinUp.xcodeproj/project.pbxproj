@@ -25,7 +25,6 @@
 		12100E042321435C0081F8A2 /* WakePenguinUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12100E032321435C0081F8A2 /* WakePenguinUpUITests.swift */; };
 		122018442341FAC600A9FA41 /* ARoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122018432341FAC600A9FA41 /* ARoundButton.swift */; };
 		123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */; };
-		12426CA723604695004A4929 /* icon_penguin_sleep_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */; };
 		125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */; };
 		129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6C43233075A80026CDE3 /* ARoundView.swift */; };
 		12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F80177232F6BC20055C4D0 /* MainViewController.swift */; };
@@ -82,7 +81,6 @@
 		12100E052321435C0081F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122018432341FAC600A9FA41 /* ARoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundButton.swift; sourceTree = "<group>"; };
 		123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
-		12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon_penguin_sleep_gif.gif; sourceTree = "<group>"; };
 		125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemCell.swift; sourceTree = "<group>"; };
 		129B6C43233075A80026CDE3 /* ARoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundView.swift; sourceTree = "<group>"; };
 		12F80177232F6BC20055C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -192,14 +190,6 @@
 			path = WakePenguinUpUITests;
 			sourceTree = "<group>";
 		};
-		12426CA523604684004A4929 /* GIFResources */ = {
-			isa = PBXGroup;
-			children = (
-				12426CA623604695004A4929 /* icon_penguin_sleep_gif.gif */,
-			);
-			path = GIFResources;
-			sourceTree = "<group>";
-		};
 		12F8017B232F6C2D0055C4D0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +207,6 @@
 		12F8017C232F6C340055C4D0 /* SuppoertFiles */ = {
 			isa = PBXGroup;
 			children = (
-				12426CA523604684004A4929 /* GIFResources */,
 				12100DEA2321435C0081F8A2 /* Assets.xcassets */,
 				12100DEF2321435C0081F8A2 /* Info.plist */,
 				12084D6F23617AAA0087477A /* Localizable.strings */,
@@ -380,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12100DEE2321435C0081F8A2 /* LaunchScreen.storyboard in Resources */,
-				12426CA723604695004A4929 /* icon_penguin_sleep_gif.gif in Resources */,
 				120C5A9B233226FF009AA613 /* LockView.xib in Resources */,
 				12084D6D23617AAA0087477A /* Localizable.strings in Resources */,
 				12100DEB2321435C0081F8A2 /* Assets.xcassets in Resources */,
@@ -690,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -713,7 +701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

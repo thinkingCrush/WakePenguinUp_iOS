@@ -62,6 +62,9 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="value">
                                             <real key="value" value="0.0"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="unitFontSize">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gkG-ya-Lsi">
@@ -78,7 +81,7 @@
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock_opened" translatesAutoresizingMaskIntoConstraints="NO" id="zJz-4D-rMY">
-                                    <rect key="frame" x="21.5" y="16" width="130" height="126"/>
+                                    <rect key="frame" x="21.5" y="19" width="130" height="126"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="zJz-4D-rMY" secondAttribute="height" multiplier="173:168" id="Hfp-56-s9U"/>
                                     </constraints>
@@ -93,7 +96,7 @@
                                 <constraint firstItem="Lw5-dZ-0V9" firstAttribute="leading" secondItem="tJM-eM-4of" secondAttribute="leading" id="Hjx-we-bGX"/>
                                 <constraint firstItem="zJz-4D-rMY" firstAttribute="width" secondItem="tJM-eM-4of" secondAttribute="width" multiplier="0.75" id="Mma-Ye-dgy"/>
                                 <constraint firstItem="GjO-UH-apw" firstAttribute="leading" secondItem="tJM-eM-4of" secondAttribute="leading" id="R2n-t4-ikW"/>
-                                <constraint firstItem="zJz-4D-rMY" firstAttribute="centerY" secondItem="tJM-eM-4of" secondAttribute="centerY" constant="-5" id="Rn0-dC-pkV"/>
+                                <constraint firstItem="zJz-4D-rMY" firstAttribute="centerY" secondItem="tJM-eM-4of" secondAttribute="centerY" constant="-2" id="Rn0-dC-pkV"/>
                                 <constraint firstAttribute="trailing" secondItem="Lw5-dZ-0V9" secondAttribute="trailing" id="Wt9-xf-IvE"/>
                                 <constraint firstItem="gkG-ya-Lsi" firstAttribute="leading" secondItem="tJM-eM-4of" secondAttribute="leading" id="Z7y-vQ-J0B"/>
                                 <constraint firstAttribute="trailing" secondItem="GjO-UH-apw" secondAttribute="trailing" id="ac3-fX-cbq"/>
@@ -143,6 +146,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_lock_opened" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="icon_lock_opened" width="240" height="240"/>
     </resources>
 </document>

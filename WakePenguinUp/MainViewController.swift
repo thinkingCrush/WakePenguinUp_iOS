@@ -34,6 +34,12 @@ class MainViewController : BaseViewController, WKUIDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emptyLabel: UILabel!
     
+    @IBOutlet weak var helpViewContainer: UIView!
+    @IBOutlet weak var helpMenuViewContainer: UIView!
+    @IBOutlet weak var helpStarViewContainer: UIView!
+    @IBOutlet weak var helpUrlViewContainer: UIView!
+    @IBOutlet weak var helpLockVIewContainer: UIView!
+    
     var lockButton : UIButton?
     var time = 4
     var timer = Timer()
@@ -87,6 +93,40 @@ class MainViewController : BaseViewController, WKUIDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         setFavoritesList()
+    
+        if !userDefault.bool(forKey: "isStartApp") {
+            helpViewContainer.isHidden = false
+            userDefault.setValue(true, forKey: "isStartApp")
+            userDefault.synchronize()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.helpPage()
+            }
+        }
+        
+    }
+    
+   
+   
+    
+    @IBOutlet weak var helpMainViewContainer: UIView!
+    func helpPage() {
+        let rect = urlTextFiled.frame
+        let layer = CAShapeLayer.init()
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: 8)
+        layer.path = path.cgPath;
+        layer.strokeColor = UIColor.white.cgColor;
+        layer.lineDashPattern = [10,5];
+        layer.lineWidth = 2.0
+        layer.backgroundColor = UIColor.clear.cgColor;
+        layer.fillColor = UIColor.clear.cgColor;
+        self.helpMainViewContainer.layer.addSublayer(layer);
+        
+        helpStarViewContainer.addDashedBorder()
+        helpMenuViewContainer.addDashedBorder()
+        helpLockVIewContainer.addDashedBorder()
+    }
+    @IBAction func helpViewClickAction(_ sender: Any) {
+        helpViewContainer.isHidden = true
     }
     
   

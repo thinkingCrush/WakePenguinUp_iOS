@@ -112,9 +112,6 @@ extension TutorialPageViewController: ImageSlideshowDelegate {
     }
     
     @objc func moveToMain() {
-        let userDefault = UserDefaults.standard
-        userDefault.setValue(true, forKey: "isStartApp")
-        userDefault.synchronize()
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let vc = sb.instantiateViewController(withIdentifier: "MainNaviVC") as? UINavigationController {
             vc.modalPresentationStyle = .fullScreen

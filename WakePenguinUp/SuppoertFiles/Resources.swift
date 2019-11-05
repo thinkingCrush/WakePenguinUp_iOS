@@ -28,5 +28,7 @@ struct R {
         static var Message_05 = "message_05".localized
         static var Message_06 = "message_06".localized
         static var Message_07 = "message_07".localized
+        static var Message_08 = "message_08".localized
+        
     }
 }

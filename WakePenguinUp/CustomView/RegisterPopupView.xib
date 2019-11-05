@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterPopupView" customModule="WPU" customModuleProvider="target">
             <connections>
                 <outlet property="actionButton" destination="oKb-v6-JOM" id="kTw-oC-03d"/>
+                <outlet property="cancelButton" destination="el7-zC-Xp3" id="gSF-us-eUm"/>
                 <outlet property="contentView" destination="wGP-wB-9LX" id="uru-Qv-Mlz"/>
                 <outlet property="favoritesNameTextField" destination="ShK-df-KQB" id="Vcl-Y3-STn"/>
                 <outlet property="favoritesUrlTextField" destination="5Zb-Of-PBo" id="ilf-NK-wHX"/>
@@ -65,7 +66,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLb-pf-BIS">
                                             <rect key="frame" x="0.0" y="100" width="491" height="140"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="바로가기 이름" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShK-df-KQB">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShK-df-KQB">
                                                     <rect key="frame" x="20" y="5" width="451" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="f4a-Rd-Zyk"/>
@@ -121,7 +122,7 @@
                                                 <constraint firstAttribute="height" constant="60" id="bzX-Lu-bPq"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="취소">
+                                            <state key="normal">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
@@ -135,7 +136,7 @@
                                                 <constraint firstAttribute="height" constant="60" id="RZE-7z-hIF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="저장">
+                                            <state key="normal">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>

@@ -130,20 +130,40 @@ class LockView: UIView {
         
         if let topController = UIApplication.topMostViewController{
             if topController.view.viewWithTag(10001) == nil {
-                let frame = CGRect(origin: topController.view.center, size: CGSize(width: 55, height: 85))
-                guard let sleepImageView = UIImageView.fromGif(frame: frame, resourceName: "icon_penguin_sleep_gif") else { return }
+                if let wakeupView = topController.view.viewWithTag(10002) {
+                    wakeupView.removeFromSuperview()
+                }
+//                let frame = CGRect(origin: topController.view.center, size: CGSize(width: 111.3, height: 121.5))
+//                guard let sleepImageView = UIImageView.fromGif(frame: frame, resourceName: "icon_penguin_sleep_gif") else { return }
+                
+                let sleepImageView = UIImageView(image: UIImage(named: "icon_penguin_sleep_0"))
+                
+                let images: [UIImage] = [UIImage(named: "icon_penguin_sleep_0")!, UIImage(named: "icon_penguin_sleep_1")!, UIImage(named: "icon_penguin_sleep_2")!, UIImage(named: "icon_penguin_sleep_3")!]
+                sleepImageView.animationImages = images
+                
                 sleepImageView.translatesAutoresizingMaskIntoConstraints = false
                 sleepImageView.tag = 10001
-                sleepImageView.animationDuration = 1
-                topController.view.addSubview(sleepImageView)
+                sleepImageView.animationDuration = 0.6
+                topController.view.insertSubview(sleepImageView, at: 1)
+                
+                
                 
                 sleepImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -10).isActive = true
-                sleepImageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
-                sleepImageView.heightAnchor.constraint(equalToConstant: 85).isActive = true
+                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -30).isActive = true
+                
+                
+                if UIDevice.current.orientation.isLandscape {
+//                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.4).isActive = true
+                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.4).isActive = true
+                    sleepImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.4) * 0.91).isActive = true
+                }else {
+                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.4).isActive = true
+                    sleepImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.4) * 1.09).isActive = true
+                }
+                
                 sleepImageView.startAnimating()
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
                     sleepImageView.removeFromSuperview()
                 }
             }
