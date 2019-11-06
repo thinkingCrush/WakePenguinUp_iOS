@@ -22,7 +22,7 @@ class LockView: UIView {
     var time = 3
     var startTimer = false
     
-    static var soundPlayer = AVAudioPlayer()
+    static var soundPlayer : AVAudioPlayer!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

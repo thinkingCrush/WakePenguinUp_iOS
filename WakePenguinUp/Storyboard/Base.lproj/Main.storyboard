@@ -223,7 +223,7 @@ URL 주소를 확인해주세요.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_notconnected" translatesAutoresizingMaskIntoConstraints="NO" id="mQu-Rf-FsH">
-                                                <rect key="frame" x="103.66666666666666" y="294.66666666666669" width="207.00000000000003" height="184.66666666666669"/>
+                                                <rect key="frame" x="103.66666666666669" y="294.66666666666669" width="207" height="184.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mQu-Rf-FsH" secondAttribute="height" multiplier="37:33" id="0pL-BT-OS9"/>
                                                 </constraints>
