@@ -9,6 +9,7 @@
 import UIKit
 import AudioToolbox
 import MBCircularProgressBar
+import AVKit
 
 class LockView: UIView {
     
@@ -20,6 +21,8 @@ class LockView: UIView {
     
     var time = 3
     var startTimer = false
+    
+    static var soundPlayer = AVAudioPlayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -106,6 +109,16 @@ class LockView: UIView {
     }
     
     func timeLimitStop(){
+        
+        let path = Bundle.main.path(forResource: "sound_lock", ofType : "mp3")!
+        let url = URL(fileURLWithPath : path)
+        do {
+            LockView.soundPlayer = try AVAudioPlayer(contentsOf: url)
+            LockView.soundPlayer.play()
+        } catch {
+            print ("There is an issue with this code!")
+
+        }
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         
         startTimer = false

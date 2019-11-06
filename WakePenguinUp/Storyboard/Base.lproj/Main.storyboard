@@ -223,7 +223,7 @@ URL 주소를 확인해주세요.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_notconnected" translatesAutoresizingMaskIntoConstraints="NO" id="mQu-Rf-FsH">
-                                                <rect key="frame" x="103.66666666666669" y="294.66666666666669" width="207" height="184.66666666666669"/>
+                                                <rect key="frame" x="103.66666666666666" y="294.66666666666669" width="207.00000000000003" height="184.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mQu-Rf-FsH" secondAttribute="height" multiplier="37:33" id="0pL-BT-OS9"/>
                                                 </constraints>
@@ -263,14 +263,14 @@ URL 주소를 확인해주세요.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_4" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-Zl-MCx">
-                                        <rect key="frame" x="139.66666666666666" y="670" width="85" height="121"/>
+                                        <rect key="frame" x="129.66666666666666" y="675" width="85" height="121"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="121" id="Rua-D4-BQG"/>
                                             <constraint firstAttribute="width" constant="85" id="Wg7-34-ie7"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="터치 잠금 버튼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2p-P0-hVL">
-                                        <rect key="frame" x="229.66666666666663" y="675" width="129" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="터치 잠금 버튼" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2p-P0-hVL">
+                                        <rect key="frame" x="219.66666666666663" y="679.66666666666663" width="129" height="27.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -453,8 +453,8 @@ URL 주소를 확인해주세요.</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="s2p-P0-hVL" firstAttribute="leading" secondItem="fUI-Zl-MCx" secondAttribute="trailing" constant="5" id="0Jb-On-PfQ"/>
-                                    <constraint firstItem="nOc-EB-WPM" firstAttribute="top" secondItem="fUI-Zl-MCx" secondAttribute="bottom" constant="5" id="2a3-oC-EZX"/>
-                                    <constraint firstItem="fUI-Zl-MCx" firstAttribute="centerX" secondItem="nOc-EB-WPM" secondAttribute="centerX" constant="-25" id="4UU-or-Ork"/>
+                                    <constraint firstItem="nOc-EB-WPM" firstAttribute="top" secondItem="fUI-Zl-MCx" secondAttribute="bottom" id="2a3-oC-EZX"/>
+                                    <constraint firstItem="fUI-Zl-MCx" firstAttribute="centerX" secondItem="nOc-EB-WPM" secondAttribute="centerX" constant="-35" id="4UU-or-Ork"/>
                                     <constraint firstItem="lcs-Gq-lSg" firstAttribute="top" secondItem="SGn-67-uLJ" secondAttribute="top" id="F6E-ap-kSj"/>
                                     <constraint firstAttribute="trailing" secondItem="lcs-Gq-lSg" secondAttribute="trailing" id="FxJ-ud-D70"/>
                                     <constraint firstItem="nOc-EB-WPM" firstAttribute="centerX" secondItem="SGn-67-uLJ" secondAttribute="centerX" id="O9H-wi-fOP"/>
@@ -906,7 +906,7 @@ URL 주소를 확인해주세요.</string>
         <image name="arrow_4" width="43" height="51.666667938232422"/>
         <image name="icon_favorites_list" width="21.333333969116211" height="21.333333969116211"/>
         <image name="icon_notconnected" width="359.33334350585938" height="311.66665649414062"/>
-        <image name="icon_penguin_h_2" width="307" height="360.33334350585938"/>
+        <image name="icon_penguin_h_2" width="333.33334350585938" height="400"/>
         <image name="icon_settings2" width="21.333333969116211" height="21.333333969116211"/>
         <image name="icon_star_off" width="21.333333969116211" height="21.333333969116211"/>
     </resources>

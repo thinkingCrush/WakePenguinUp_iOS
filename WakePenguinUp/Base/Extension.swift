@@ -96,6 +96,17 @@ extension UIWindow {
                             }
                         })
                         
+                        let path = Bundle.main.path(forResource: "sound_unlock", ofType : "mp3")!
+                        let url = URL(fileURLWithPath : path)
+                        do {
+                            LockView.soundPlayer = try AVAudioPlayer(contentsOf: url)
+                            LockView.soundPlayer.play()
+                        } catch {
+                            print ("There is an issue with this code!")
+
+                        }
+                        
+                        
                         if topController.view.viewWithTag(10002) == nil{
                             if let sleepView = topController.view.viewWithTag(10001) {
                                 sleepView.removeFromSuperview()

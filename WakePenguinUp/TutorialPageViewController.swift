@@ -28,7 +28,12 @@ class TutorialPageViewController: BaseViewController{
         super.viewDidLoad()
         configurePageControl()
         
-        localSource = [BundleImageSource(imageString: "page_help_1"), BundleImageSource(imageString: "page_help_2")]
+        if NSLocale.current.languageCode == "ko" {
+            localSource = [BundleImageSource(imageString: "page_help_1"), BundleImageSource(imageString: "page_help_2")]
+        }else {
+            localSource = [BundleImageSource(imageString: "page_help_1_e"), BundleImageSource(imageString: "page_help_2_e")]
+        }
+        
 //        slideshow.slideshowInterval = 5.0
         slideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
         slideshow.circular = false

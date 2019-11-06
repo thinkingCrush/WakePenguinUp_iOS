@@ -27,6 +27,8 @@
 		123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */; };
 		125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */; };
 		129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6C43233075A80026CDE3 /* ARoundView.swift */; };
+		129E674923716D31004540DE /* sound_unlock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 129E674723716D31004540DE /* sound_unlock.mp3 */; };
+		129E674A23716D31004540DE /* sound_lock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 129E674823716D31004540DE /* sound_lock.mp3 */; };
 		12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F80177232F6BC20055C4D0 /* MainViewController.swift */; };
 		12F8017A232F6BE30055C4D0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F80179232F6BE30055C4D0 /* BaseViewController.swift */; };
 		12F8017F232F6CEF0055C4D0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8017E232F6CEF0055C4D0 /* Extension.swift */; };
@@ -83,6 +85,8 @@
 		123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
 		125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemCell.swift; sourceTree = "<group>"; };
 		129B6C43233075A80026CDE3 /* ARoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundView.swift; sourceTree = "<group>"; };
+		129E674723716D31004540DE /* sound_unlock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_unlock.mp3; sourceTree = "<group>"; };
+		129E674823716D31004540DE /* sound_lock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound_lock.mp3; sourceTree = "<group>"; };
 		12F80177232F6BC20055C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		12F80179232F6BE30055C4D0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		12F8017E232F6CEF0055C4D0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				120EA8F52334AC6900B94771 /* Util */,
 				12F80180232F6D950055C4D0 /* CustomView */,
 				12F8017D232F6C400055C4D0 /* Storyboard */,
+				129E674623716D1E004540DE /* Sound Resources */,
 				12F8017C232F6C340055C4D0 /* SuppoertFiles */,
 				12F8017B232F6C2D0055C4D0 /* Base */,
 				12100DE52321435B0081F8A2 /* TutorialPageViewController.swift */,
@@ -188,6 +193,15 @@
 				12100E052321435C0081F8A2 /* Info.plist */,
 			);
 			path = WakePenguinUpUITests;
+			sourceTree = "<group>";
+		};
+		129E674623716D1E004540DE /* Sound Resources */ = {
+			isa = PBXGroup;
+			children = (
+				129E674823716D31004540DE /* sound_lock.mp3 */,
+				129E674723716D31004540DE /* sound_unlock.mp3 */,
+			);
+			path = "Sound Resources";
 			sourceTree = "<group>";
 		};
 		12F8017B232F6C2D0055C4D0 /* Base */ = {
@@ -373,7 +387,9 @@
 				12084D6D23617AAA0087477A /* Localizable.strings in Resources */,
 				12100DEB2321435C0081F8A2 /* Assets.xcassets in Resources */,
 				123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */,
+				129E674A23716D31004540DE /* sound_lock.mp3 in Resources */,
 				12100DE92321435B0081F8A2 /* Main.storyboard in Resources */,
+				129E674923716D31004540DE /* sound_unlock.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
