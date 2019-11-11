@@ -96,10 +96,14 @@ extension UIWindow {
                             }
                         })
                         
-                        let path = Bundle.main.path(forResource: "sound_unlock", ofType : "mp3")!
+                        let path = Bundle.main.path(forResource: "sound_lock", ofType : "wav")!
                         let url = URL(fileURLWithPath : path)
                         do {
+                            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: .mixWithOthers)
+                            try AVAudioSession.sharedInstance().setActive(true)
+                            
                             LockView.soundPlayer = try AVAudioPlayer(contentsOf: url)
+                            LockView.soundPlayer.prepareToPlay()
                             LockView.soundPlayer.play()
                         } catch {
                             print ("There is an issue with this code!")
@@ -122,18 +126,20 @@ extension UIWindow {
 
                             wakeupImageView.translatesAutoresizingMaskIntoConstraints = false
                             wakeupImageView.tag = 10002
-                            wakeupImageView.animationDuration = 0.6
+                            wakeupImageView.animationDuration = 1
                             topController.view.addSubview(wakeupImageView)
                             
                             wakeupImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -30).isActive = true
+                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -15).isActive = true
                             
                              if UIDevice.current.orientation.isLandscape {
                                 wakeupImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
-                                wakeupImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.45) * 0.52).isActive = true
+                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
+//                                wakeupImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.45) * 0.52).isActive = true
                             }else {
-                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.35).isActive = true
-                                wakeupImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.35) * 1.9).isActive = true
+                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
+                                wakeupImageView.heightAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
+//                                wakeupImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.35) * 1.9).isActive = true
                             }
                             
                             
@@ -223,6 +229,30 @@ extension UIView {
         
         self.layer.addSublayer(shapeLayer)
     }
+    
+    func bindToKeyboard(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    @objc func keyboardWillChange(_ notification: NSNotification){
+        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
+        let beginningFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let endFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+        let deltaY = endFrame.origin.y - beginningFrame.origin.y
+
+        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: KeyframeAnimationOptions(rawValue: curve), animations: {
+            
+            
+            self.frame.origin.y += deltaY / 2
+//
+//            if let vc = UIApplication.topMostViewController {
+//                vc.view.frame.origin.y += deltaY
+//            }
+        }, completion: nil)
+    }
+    
 }
 
 

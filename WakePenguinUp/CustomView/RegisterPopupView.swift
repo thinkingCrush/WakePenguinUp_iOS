@@ -61,21 +61,8 @@ class RegisterPopupView : UIView{
         setToolbar()
         thumnailView.cornerRadius = thumnailView.frame.width / 2
         
-        setNotificationCenter()
+        self.bindToKeyboard()
         
-    }
-    
-    func setNotificationCenter(){
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        let notificationCenter = NotificationCenter.default
-//        UIKeyboardWillHide
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow),
-                                       name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide),
-                                       name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setToolbar(){
@@ -93,25 +80,6 @@ class RegisterPopupView : UIView{
     @objc func doneButtonAction() {
         self.endEditing(true)
     }
-    
-    @objc func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print("notification: Keyboard will show")
-            if self.contentView.frame.origin.y == 0{
-                self.contentView.frame.origin.y -= keyboardSize.height / 2
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print("notification: Keyboard will hidden")
-            if self.contentView.frame.origin.y != 0 {
-                self.contentView.frame.origin.y += keyboardSize.height / 2
-            }
-        }
-    }
-    
     
     func setView(name : String, url : String, check : Bool){
         favoritesName = name
@@ -217,15 +185,6 @@ class RegisterPopupView : UIView{
         }) { (success) in
             self.removeFromSuperview()
         }
-//        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [], animations: {
-//            self.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
-//            if let darkView = self.superview?.viewWithTag(9909) {
-//                darkView.isHidden = false
-//                darkView.alpha = 0
-//            }
-//        }) { (success) in
-//            self.removeFromSuperview()
-//        }
     }
     
     func saveFavoritesData(){

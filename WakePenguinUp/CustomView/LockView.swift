@@ -101,7 +101,15 @@ class LockView: UIView {
                         self.isCancel = false
                         return
                     }else {
-                        self.timeLimitStop()
+                        if let sideMenuViewController = UIApplication.topMostViewController as? SideMenuViewController{
+                            sideMenuViewController.dismiss(animated: true) {
+                                self.timeLimitStop()
+                            }
+                        }else {
+                            self.timeLimitStop()
+                        }
+                        
+                        
                     }
                 }
             })
@@ -110,15 +118,21 @@ class LockView: UIView {
     
     func timeLimitStop(){
         
-        let path = Bundle.main.path(forResource: "sound_lock", ofType : "mp3")!
+        let path = Bundle.main.path(forResource: "sound_lock", ofType : "wav")!
         let url = URL(fileURLWithPath : path)
+        
         do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: .mixWithOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
             LockView.soundPlayer = try AVAudioPlayer(contentsOf: url)
+            LockView.soundPlayer.prepareToPlay()
             LockView.soundPlayer.play()
         } catch {
             print ("There is an issue with this code!")
 
         }
+        
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         
         startTimer = false
@@ -156,22 +170,24 @@ class LockView: UIView {
                 
                 sleepImageView.translatesAutoresizingMaskIntoConstraints = false
                 sleepImageView.tag = 10001
-                sleepImageView.animationDuration = 0.6
+                sleepImageView.animationDuration = 1
                 topController.view.insertSubview(sleepImageView, at: 1)
                 
                 
                 
                 sleepImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -30).isActive = true
+                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -15).isActive = true
                 
                 
                 if UIDevice.current.orientation.isLandscape {
 //                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.4).isActive = true
-                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.4).isActive = true
-                    sleepImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.4) * 0.91).isActive = true
+                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
+                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
+                    
                 }else {
-                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.4).isActive = true
-                    sleepImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.4) * 1.09).isActive = true
+                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
+                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
+//                    sleepImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.4) * 1.09).isActive = true
                 }
                 
                 sleepImageView.startAnimating()
