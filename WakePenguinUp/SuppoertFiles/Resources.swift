@@ -21,6 +21,8 @@ struct R {
         static var Basic_save = "basic_save".localized
         static var Basic_delete = "basic_delete".localized
         static var Basic_shortcuts = "basic_shortcuts".localized
+        static var Basic_min = "basic_min".localized
+        static var Basic_hour = "basic_hour".localized
         static var Message_01 = "message_01".localized
         static var Message_02 = "message_02".localized
         static var Message_03 = "message_03".localized
@@ -33,7 +35,10 @@ struct R {
         static var Message_10 = "message_10".localized
         static var Message_11 = "message_11".localized
         static var Message_12 = "message_12".localized
-        
+        static var Message_13 = "message_13".localized
+        static var Message_14 = "message_14".localized
+        static var Message_15 = "message_15".localized
+        static var Message_16 = "message_16".localized
         
     }
 }

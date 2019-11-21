@@ -400,8 +400,10 @@ class MainViewController : BaseViewController, WKUIDelegate {
             webConfiguration.allowsInlineMediaPlayback = true
         }
         
+        
         webView = WKWebView(frame: webContainerView.frame, configuration: webConfiguration)
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         
         webContainerView.addSubview(webView)
         
@@ -422,6 +424,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
         self.webView.navigationDelegate = self
         self.webView.scrollView.delegate = self
         self.webView.allowsBackForwardNavigationGestures = true
+    
 //        let urlString = "https://www.youtube.com"
 //
 //        let url = URL(string: urlString)
@@ -440,6 +443,38 @@ class MainViewController : BaseViewController, WKUIDelegate {
         return false
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let key = keyPath, key == "URL"{
+            if let urlString = webView.url?.absoluteString {
+                lastWebViewUrl = urlString
+                urlTextFiled.text = urlString
+                var lastRemoveUrl = urlString
+                var mobileUrl = urlString
+                if lastRemoveUrl.last! == "/" {
+                    lastRemoveUrl.removeLast()
+                }
+                if urlString.contains("://m") {
+                    mobileUrl = mobileUrl.replacingOccurrences(of: "://m", with: "://www")
+                    if mobileUrl.last! == "/" {
+                        mobileUrl.removeLast()
+                    }
+                }
+
+
+                favoritesStarImage.image = UIImage(named: "icon_star_off")
+                isFavoritesCheck = false
+                favoritesName = ""
+
+                favoritesList.forEach { (item) in
+                    if item.url == urlString || item.url == lastRemoveUrl || item.url == mobileUrl{
+                        favoritesStarImage.image = UIImage(named: "icon_star_on")
+                        isFavoritesCheck = true
+                        favoritesName = item.name
+                    }
+                }
+            }
+        }
+    }
     
     
     
@@ -482,7 +517,7 @@ class MainViewController : BaseViewController, WKUIDelegate {
     func showLoding(){
         if view.viewWithTag(9999) == nil {
             activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-            activityIndicator.color = UIColor.colorFromHex(65585)
+            activityIndicator.color = UIColor.colorFromHex(16438838)
             activityIndicator.frame = CGRect(x: view.frame.midX-25, y: view.frame.midY-25, width: 50, height: 50)
             activityIndicator.hidesWhenStopped = true
             activityIndicator.startAnimating()
@@ -518,36 +553,8 @@ extension MainViewController: WKNavigationDelegate {
         removeLoding()
     }
     
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
-        if let urlString = webView.url?.absoluteString {
-            lastWebViewUrl = urlString
-            urlTextFiled.text = urlString
-            var lastRemoveUrl = urlString
-            var mobileUrl = urlString
-            if lastRemoveUrl.last! == "/" {
-                lastRemoveUrl.removeLast()
-            }
-            
-            if urlString.contains("://m") {
-                mobileUrl = mobileUrl.replacingOccurrences(of: "://m", with: "://www")
-                if mobileUrl.last! == "/" {
-                    mobileUrl.removeLast()
-                }
-            }
-            
-            
-            favoritesStarImage.image = UIImage(named: "icon_star_off")
-            isFavoritesCheck = false
-            favoritesName = ""
-            
-            favoritesList.forEach { (item) in
-                if item.url == urlString || item.url == lastRemoveUrl || item.url == mobileUrl{
-                    favoritesStarImage.image = UIImage(named: "icon_star_on")
-                    isFavoritesCheck = true
-                    favoritesName = item.name
-                }
-            }
-        }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("decidePolicyFor")
         if navigationAction.request.url?.scheme == "tel" {
             UIApplication.shared.openURL(navigationAction.request.url!)
             decisionHandler(.cancel)

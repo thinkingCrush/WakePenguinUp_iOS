@@ -553,8 +553,23 @@ URL 주소를 확인해주세요.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McY-Q3-k89">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skt-3m-K4d">
+                                                <rect key="frame" x="324" y="2" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="skt-3m-K4d" secondAttribute="height" multiplier="1:1" id="lAU-2v-WUj"/>
+                                                    <constraint firstAttribute="width" constant="40" id="qbc-xs-Ldq"/>
+                                                </constraints>
+                                                <state key="normal" image="icon_alarm"/>
+                                                <connections>
+                                                    <action selector="alarmAction:" destination="Key-kl-v2z" eventType="touchUpInside" id="tNq-jd-0ku"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPv-dz-fmu">
-                                                <rect key="frame" x="382.66666666666669" y="11" width="21.333333333333314" height="22"/>
+                                                <rect key="frame" x="364" y="1" width="40" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BPv-dz-fmu" secondAttribute="height" multiplier="21:22" id="hQt-rX-L7I"/>
+                                                    <constraint firstAttribute="width" constant="40" id="lfD-4C-gKs"/>
+                                                </constraints>
                                                 <state key="normal" image="icon_settings2"/>
                                                 <connections>
                                                     <action selector="editAction:" destination="Key-kl-v2z" eventType="touchUpInside" id="Hrr-Y6-7UT"/>
@@ -563,13 +578,15 @@ URL 주소를 확인해주세요.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="skt-3m-K4d" firstAttribute="centerY" secondItem="McY-Q3-k89" secondAttribute="centerY" id="3G5-xc-Pc2"/>
                                             <constraint firstItem="BPv-dz-fmu" firstAttribute="centerY" secondItem="McY-Q3-k89" secondAttribute="centerY" id="9ux-A3-iU3"/>
                                             <constraint firstAttribute="height" constant="44" id="Fk0-HL-QOb"/>
+                                            <constraint firstItem="BPv-dz-fmu" firstAttribute="leading" secondItem="skt-3m-K4d" secondAttribute="trailing" id="cGv-zc-xwK"/>
                                             <constraint firstAttribute="trailing" secondItem="BPv-dz-fmu" secondAttribute="trailing" constant="10" id="eg4-oE-65g"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-P4-cvj">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="765"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesItemCellID" rowHeight="106" id="YU2-3T-1hh" customClass="FavoritesItemCell" customModule="WPU" customModuleProvider="target">
@@ -647,11 +664,18 @@ URL 주소를 확인해주세요.</string>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEq-ts-hu9">
+                                        <rect key="frame" x="8" y="809" width="398" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="CHx-i9-e6q"/>
+                                        </constraints>
+                                    </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eso-Ky-wVB">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="765"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fz6-kg-Gl2">
-                                                <rect key="frame" x="187.66666666666666" y="189.33333333333329" width="38.666666666666657" height="429.66666666666674"/>
+                                                <rect key="frame" x="187.66666666666666" y="167.66666666666666" width="38.666666666666657" height="429.66666666666674"/>
                                                 <string key="text">바 
 로 
 가 
@@ -683,12 +707,15 @@ URL 주소를 확인해주세요.</string>
                                     <constraint firstAttribute="trailing" secondItem="Eso-Ky-wVB" secondAttribute="trailing" id="6wu-Xn-doL"/>
                                     <constraint firstItem="kOp-P4-cvj" firstAttribute="leading" secondItem="cew-Vk-dOF" secondAttribute="leading" id="80E-Cc-IfP"/>
                                     <constraint firstItem="kOp-P4-cvj" firstAttribute="top" secondItem="McY-Q3-k89" secondAttribute="bottom" id="CJ6-4I-tJo"/>
+                                    <constraint firstItem="iEq-ts-hu9" firstAttribute="top" secondItem="kOp-P4-cvj" secondAttribute="bottom" id="F1w-6t-B1Q"/>
+                                    <constraint firstItem="iEq-ts-hu9" firstAttribute="top" secondItem="Eso-Ky-wVB" secondAttribute="bottom" id="Mtu-PP-NtR"/>
                                     <constraint firstItem="Eso-Ky-wVB" firstAttribute="top" secondItem="McY-Q3-k89" secondAttribute="bottom" id="WcT-oI-VBz"/>
                                     <constraint firstAttribute="trailing" secondItem="kOp-P4-cvj" secondAttribute="trailing" id="cEv-nT-wvh"/>
                                     <constraint firstItem="McY-Q3-k89" firstAttribute="leading" secondItem="cew-Vk-dOF" secondAttribute="leading" id="hN5-yM-IgJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="kOp-P4-cvj" secondAttribute="bottom" id="l2O-k4-xiD"/>
                                     <constraint firstItem="McY-Q3-k89" firstAttribute="top" secondItem="cew-Vk-dOF" secondAttribute="top" id="mvO-ec-QhB"/>
-                                    <constraint firstAttribute="bottom" secondItem="Eso-Ky-wVB" secondAttribute="bottom" id="n7c-Vt-Jtu"/>
+                                    <constraint firstItem="iEq-ts-hu9" firstAttribute="leading" secondItem="cew-Vk-dOF" secondAttribute="leadingMargin" id="ndl-iQ-HD4"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="iEq-ts-hu9" secondAttribute="trailing" id="tKS-kl-TBk"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="iEq-ts-hu9" secondAttribute="bottom" id="w9n-q1-qx3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -712,7 +739,7 @@ URL 주소를 확인해주세요.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78k-oE-A4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="RaK-A6-IJv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="-628"/>
+            <point key="canvasLocation" x="2295.6521739130435" y="-628.125"/>
         </scene>
         <!--수정-->
         <scene sceneID="hzx-HN-Ey9">
@@ -904,6 +931,7 @@ URL 주소를 확인해주세요.</string>
         <image name="arrow_2" width="25.333333969116211" height="22"/>
         <image name="arrow_3" width="22.666666030883789" height="51"/>
         <image name="arrow_4" width="43" height="51.666667938232422"/>
+        <image name="icon_alarm" width="21.333333969116211" height="21.333333969116211"/>
         <image name="icon_favorites_list" width="21.333333969116211" height="21.333333969116211"/>
         <image name="icon_notconnected" width="359.33334350585938" height="311.66665649414062"/>
         <image name="icon_penguin_h_2" width="333.33334350585938" height="400"/>

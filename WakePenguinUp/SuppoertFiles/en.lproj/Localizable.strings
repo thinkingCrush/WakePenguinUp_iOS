@@ -16,6 +16,8 @@
 "basic_save" = "Save";
 "basic_delete" = "Delete";
 "basic_shortcuts" = "Shortcuts";
+"basic_min" = "min";
+"basic_hour" = "hour";
 "message_01" = "Cannot connect to this website \n Please check the address";
 "message_02" = "Click the add button on the right to register a shortcut";
 "message_03" = "E\nM\nP\nT\nY";
@@ -28,3 +30,7 @@
 "message_10" = "Shortcuts list";
 "message_11" = "Touch lock\nbutton";
 "message_12" = "How to use WPU";
+"message_13" = "The app will close after\n%@ hour and %@ minutes.";
+"message_14" = "Timer setting";
+"message_15" = "It will automatically shut down the app.";
+"message_16" = "The app will exit \nwith a timer setting.";

@@ -21,8 +21,12 @@ class LockView: UIView {
     
     var time = 3
     var startTimer = false
+    static var alarmTimer : Timer?
+    static var alarmTimerState = false
     
     static var soundPlayer : AVAudioPlayer!
+    
+    let userDefault = UserDefaults.standard
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -176,31 +180,128 @@ class LockView: UIView {
                 
                 
                 sleepImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -15).isActive = true
+                sleepImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -10).isActive = true
                 
+                sleepImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+                sleepImageView.widthAnchor.constraint(equalToConstant: 220).isActive = true
                 
-                if UIDevice.current.orientation.isLandscape {
-//                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.4).isActive = true
-                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
-                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
-                    
-                }else {
-                    sleepImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
-                    sleepImageView.heightAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
-//                    sleepImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.4) * 1.09).isActive = true
-                }
                 
                 sleepImageView.startAnimating()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
                     sleepImageView.removeFromSuperview()
                 }
+                
+                if userDefault.bool(forKey: "isAlarmTimer") {
+                    if let date = userDefault.value(forKey: "alarmCheck") as? Date {
+                        if !LockView.alarmTimerState {
+                            LockView.alarmTimerState = true
+                            let dateformatter = DateFormatter()
+                            dateformatter.dateFormat = "HH.mm"
+                            let dateString = dateformatter.string(from: date)
+                            let dateArr = dateString.components(separatedBy: ".")
+                            
+                            let second = (Int(dateArr[0])! * 3600) + (Int(dateArr[1])! * 60)
+                            LockView.alarmTimer = Timer.scheduledTimer(timeInterval: TimeInterval(second), target: self, selector: #selector(appFinish), userInfo: nil, repeats: false)
+                            
+                            
+                            let timerView = UIView()
+                            timerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                            timerView.translatesAutoresizingMaskIntoConstraints = false
+                            
+                            let timerLabel = UILabel()
+                            
+                            var hourString = ""
+                            if dateArr[0].first == "0"{
+                                var hour = dateArr[0]
+                                hour.removeFirst()
+                                hourString = "\(hour)"
+                            }else {
+                                hourString = "\(dateArr[0])"
+                            }
+                            
+                            var minString = ""
+                            if dateArr[1].first == "0"{
+                                var min = dateArr[1]
+                                min.removeFirst()
+                                minString = "\(min)"
+                            }else {
+                                minString = "\(dateArr[1])"
+                            }
+                            
+                            if Locale.current.languageCode == "ko" {
+                                timerLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
+                                if hourString == "0"{
+                                    timerLabel.text = "\(minString)\(R.string.Basic_min) \(R.string.Message_13)"
+                                }else {
+                                    timerLabel.text = "\(hourString)\(R.string.Basic_hour) \(minString)\(R.string.Basic_min) \(R.string.Message_13)"
+                                }
+                                
+                            }else {
+                                timerLabel.font = UIFont.systemFont(ofSize: 23, weight: .bold)
+                                timerLabel.text = String(format: R.string.Message_13, arguments: [hourString,minString])
+                            }
+                            
+                            timerLabel.numberOfLines = 2
+                            timerLabel.textAlignment = .center
+                            timerLabel.textColor = .white
+                            timerLabel.translatesAutoresizingMaskIntoConstraints = false
+                            timerView.addSubview(timerLabel)
+                            timerLabel.centerXAnchor.constraint(equalTo: timerView.centerXAnchor, constant: 0).isActive = true
+                            timerLabel.centerYAnchor.constraint(equalTo: timerView.centerYAnchor, constant: 0).isActive = true
+                            
+                            
+                            topController.view.addSubview(timerView)
+                            timerView.topAnchor.constraint(equalTo: topController.view.topAnchor, constant: 70).isActive = true
+                            timerView.centerXAnchor.constraint(equalTo: topController.view.centerXAnchor, constant: 0).isActive = true
+                            
+                            timerView.widthAnchor.constraint(equalToConstant: 280).isActive = true
+                            timerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                                timerView.removeFromSuperview()
+                            }
+                        }
+                    }
+                }
+                
             }
         }
         
     }
     
-   
+    @objc func appFinish(){
+        if let topController = UIApplication.topMostViewController {
+            let timerView = UIView()
+            timerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            timerView.translatesAutoresizingMaskIntoConstraints = false
+
+            let timerLabel = UILabel()
+            timerLabel.font = UIFont.systemFont(ofSize: 26, weight: .bold)
+
+            timerLabel.text = R.string.Message_16
+            timerLabel.numberOfLines = 2
+            timerLabel.textAlignment = .center
+            timerLabel.textColor = .white
+            timerLabel.translatesAutoresizingMaskIntoConstraints = false
+            timerView.addSubview(timerLabel)
+            timerLabel.centerXAnchor.constraint(equalTo: timerView.centerXAnchor, constant: 0).isActive = true
+            timerLabel.centerYAnchor.constraint(equalTo: timerView.centerYAnchor, constant: 0).isActive = true
+
+
+            topController.view.addSubview(timerView)
+            timerView.topAnchor.constraint(equalTo: topController.view.topAnchor, constant: 70).isActive = true
+            timerView.centerXAnchor.constraint(equalTo: topController.view.centerXAnchor, constant: 0).isActive = true
+
+            timerView.widthAnchor.constraint(equalToConstant: 280).isActive = true
+            timerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                timerView.removeFromSuperview()
+                exit(0)
+            }
+        }
+    }
     
 }
 

@@ -130,24 +130,22 @@ extension UIWindow {
                             topController.view.addSubview(wakeupImageView)
                             
                             wakeupImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -15).isActive = true
+                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -10).isActive = true
                             
-                             if UIDevice.current.orientation.isLandscape {
-                                wakeupImageView.heightAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
-                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.heightAnchor, multiplier: 0.45).isActive = true
-//                                wakeupImageView.widthAnchor.constraint(equalToConstant: (topController.view.frame.height * 0.45) * 0.52).isActive = true
-                            }else {
-                                wakeupImageView.widthAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
-                                wakeupImageView.heightAnchor.constraint(equalTo: topController.view.widthAnchor, multiplier: 0.45).isActive = true
-//                                wakeupImageView.heightAnchor.constraint(equalToConstant: (topController.view.frame.width * 0.35) * 1.9).isActive = true
-                            }
+                            wakeupImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+                            wakeupImageView.widthAnchor.constraint(equalToConstant: 220).isActive = true
                             
+//
                             
                             wakeupImageView.startAnimating()
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
                                 wakeupImageView.removeFromSuperview()
                             }
+                            
+                            LockView.alarmTimerState = false
+                            LockView.alarmTimer?.invalidate()
+                            
                         }
                         
                     }

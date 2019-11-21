@@ -16,6 +16,8 @@
 "basic_save" = "저장";
 "basic_delete" = "삭제";
 "basic_shortcuts" = "바로가기";
+"basic_min" = "분";
+"basic_hour" = "시간";
 "message_01" = "해당 사이트에 연결할 수 없습니다.\nURL 주소를 확인해주세요";
 "message_02" = "오른쪽 추가 버튼을 클릭하여 바로가기를 등록해 주세요";
 "message_03" = "바\n로\n가\n기\n를\n\n등\n록\n해\n주\n세\n요";
@@ -28,3 +30,7 @@
 "message_10" = "바로가기 목록";
 "message_11" = "터치 잠금 버튼";
 "message_12" = "Wake Penguin Up\n사용법!";
+"message_13" = "후\n 앱이 종료됩니다.";
+"message_14" = "타이머 설정";
+"message_15" = "설정하신 타이머에 맞춰 앱을\n자동으로 종료 시켜줍니다.";
+"message_16" = "타이머 설정으로 \n앱이 종료됩니다.";
