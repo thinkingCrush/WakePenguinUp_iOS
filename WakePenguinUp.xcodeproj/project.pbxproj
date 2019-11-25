@@ -28,6 +28,7 @@
 		125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */; };
 		126DA37423752EA80050F131 /* sound_lock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 126DA37323752EA80050F131 /* sound_lock.wav */; };
 		129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6C43233075A80026CDE3 /* ARoundView.swift */; };
+		12C3CE092387D42C006BE773 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C3CE082387D42C006BE773 /* ColorPickerViewController.swift */; };
 		12EE9AF323863F210000B041 /* TimerPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EE9AF223863F210000B041 /* TimerPopupView.swift */; };
 		12EE9AF523863F300000B041 /* TimerPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12EE9AF423863F300000B041 /* TimerPopupView.xib */; };
 		12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F80177232F6BC20055C4D0 /* MainViewController.swift */; };
@@ -87,6 +88,7 @@
 		125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemCell.swift; sourceTree = "<group>"; };
 		126DA37323752EA80050F131 /* sound_lock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_lock.wav; sourceTree = "<group>"; };
 		129B6C43233075A80026CDE3 /* ARoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundView.swift; sourceTree = "<group>"; };
+		12C3CE082387D42C006BE773 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		12EE9AF223863F210000B041 /* TimerPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopupView.swift; sourceTree = "<group>"; };
 		12EE9AF423863F300000B041 /* TimerPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerPopupView.xib; sourceTree = "<group>"; };
 		12F80177232F6BC20055C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				129B6C43233075A80026CDE3 /* ARoundView.swift */,
 				120EA8EF2334525200B94771 /* SideMenuNavigationController.swift */,
 				122018432341FAC600A9FA41 /* ARoundButton.swift */,
+				12C3CE082387D42C006BE773 /* ColorPickerViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			files = (
 				122018442341FAC600A9FA41 /* ARoundButton.swift in Sources */,
 				12F8017F232F6CEF0055C4D0 /* Extension.swift in Sources */,
+				12C3CE092387D42C006BE773 /* ColorPickerViewController.swift in Sources */,
 				125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */,
 				120EA8F223346CAF00B94771 /* FavoritesEditViewController.swift in Sources */,
 				12F80178232F6BC20055C4D0 /* MainViewController.swift in Sources */,
@@ -698,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -721,7 +725,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

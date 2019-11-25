@@ -9,12 +9,17 @@
 import Foundation
 import UIKit
 
+protocol sendColorValueDelegate {
+    func colorValue(color : UIColor)
+}
+
 protocol popupConfirmProtocol {
     func confirm(favorites : Favorites)
     func editConfirm(favorites : Favorites , indexPath : IndexPath?)
     func cancel()
 }
 class RegisterPopupView : UIView{
+    
     var favoritesName = ""
     var favoritesUrl = ""
     var isFavoritesCheck = false
@@ -32,6 +37,8 @@ class RegisterPopupView : UIView{
     @IBOutlet weak var thumnailText: UILabel!
     
     var delegate : popupConfirmProtocol?
+    var colorDelegate : sendColorValueDelegate?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,6 +68,7 @@ class RegisterPopupView : UIView{
         setToolbar()
         thumnailView.cornerRadius = thumnailView.frame.width / 2
         
+        colorDelegate = self
         self.bindToKeyboard()
         
     }
@@ -135,6 +143,20 @@ class RegisterPopupView : UIView{
         self.endEditing(true)
     }
     
+    @IBAction func colorPickerAction(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = sb.instantiateViewController(withIdentifier: "ColorPickerVC") as? ColorPickerViewController {
+            vc.color = thumnailView.backgroundColor
+            vc.colorDelegate = colorDelegate
+            
+            
+            if let topController = UIApplication.topMostViewController {
+                vc.modalPresentationStyle = .popover
+                topController.present(vc, animated: true, completion: nil)
+            }
+            
+        }
+    }
     
     @IBAction func rightButtonAction(_ sender: UIButton) {
         
@@ -270,5 +292,13 @@ class RegisterPopupView : UIView{
         }
     }
     
+}
+
+extension RegisterPopupView : sendColorValueDelegate {
+    func colorValue(color: UIColor) {
+        thumnailView.backgroundColor = color
+    }
+    
     
 }
+

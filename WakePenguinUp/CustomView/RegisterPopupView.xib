@@ -45,22 +45,41 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-ri-kHn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                            <connections>
+                                                                <action selector="colorPickerAction:" destination="-1" eventType="touchUpInside" id="k6b-An-XeP"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Ad0-ri-kHn" secondAttribute="bottom" id="KQC-2M-Rx0"/>
                                                         <constraint firstAttribute="trailing" secondItem="QOS-e0-wIV" secondAttribute="trailing" id="MVT-E5-bZn"/>
+                                                        <constraint firstItem="Ad0-ri-kHn" firstAttribute="leading" secondItem="F9w-pW-XIO" secondAttribute="leading" id="WqL-iA-eA4"/>
                                                         <constraint firstAttribute="bottom" secondItem="QOS-e0-wIV" secondAttribute="bottom" id="XcT-sz-PCp"/>
                                                         <constraint firstItem="QOS-e0-wIV" firstAttribute="leading" secondItem="F9w-pW-XIO" secondAttribute="leading" id="Xmg-1k-pHo"/>
                                                         <constraint firstAttribute="width" secondItem="F9w-pW-XIO" secondAttribute="height" multiplier="1:1" id="Xug-71-nsS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ad0-ri-kHn" secondAttribute="trailing" id="id5-8h-ZkB"/>
+                                                        <constraint firstItem="Ad0-ri-kHn" firstAttribute="top" secondItem="F9w-pW-XIO" secondAttribute="top" id="mwC-yG-znH"/>
                                                         <constraint firstItem="QOS-e0-wIV" firstAttribute="top" secondItem="F9w-pW-XIO" secondAttribute="top" id="xKd-wk-yJl"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_color_palette" translatesAutoresizingMaskIntoConstraints="NO" id="dqD-da-osV">
+                                                    <rect key="frame" x="211.5" y="12.5" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Djf-Zj-lt4"/>
+                                                        <constraint firstAttribute="width" constant="22" id="wLX-5h-sBC"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="dqD-da-osV" firstAttribute="trailing" secondItem="F9w-pW-XIO" secondAttribute="trailing" id="Heq-ub-Z8D"/>
                                                 <constraint firstItem="F9w-pW-XIO" firstAttribute="height" secondItem="5EW-OR-6je" secondAttribute="height" multiplier="0.75" id="Lmn-hc-8IH"/>
                                                 <constraint firstAttribute="height" constant="100" id="MJZ-3X-FGe"/>
                                                 <constraint firstItem="F9w-pW-XIO" firstAttribute="centerX" secondItem="5EW-OR-6je" secondAttribute="centerX" id="dFh-ci-csH"/>
                                                 <constraint firstItem="F9w-pW-XIO" firstAttribute="centerY" secondItem="5EW-OR-6je" secondAttribute="centerY" id="jKk-ee-qSH"/>
+                                                <constraint firstItem="dqD-da-osV" firstAttribute="top" secondItem="F9w-pW-XIO" secondAttribute="top" id="nhz-Q8-2Wb"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLb-pf-BIS">
@@ -191,7 +210,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="QOF-RB-sWL"/>
-            <point key="canvasLocation" x="-533" y="-457"/>
+            <point key="canvasLocation" x="-533.33333333333337" y="-457.03125"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_color_palette" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
 </document>

@@ -30,7 +30,7 @@
 "message_10" = "Shortcuts list";
 "message_11" = "Touch lock\nbutton";
 "message_12" = "How to use WPU";
-"message_13" = "The app will close after\n%@ hour and %@ minutes.";
+"message_13" = "The app will close\nafter%@ hour and %@ minutes.";
 "message_14" = "Timer setting";
-"message_15" = "It will automatically shut down the app.";
-"message_16" = "The app will exit \nwith a timer setting.";
+"message_15" = "Automatically close the app\non the timer you set";
+"message_16" = "Close the app\non the timer you set.";

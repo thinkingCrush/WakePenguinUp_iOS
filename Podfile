@@ -9,6 +9,7 @@ target 'WakePenguinUp' do
   pod 'ImageSlideshow', '~> 1.8'
   pod 'MBCircularProgressBar'
   pod 'SideMenu', '~> 6.0.0'
+  pod 'FlexColorPicker'
 
   target 'WakePenguinUpTests' do
     inherit! :search_paths

@@ -1,4 +1,5 @@
 PODS:
+  - FlexColorPicker (1.3.1)
   - ImageSlideshow (1.8.0):
     - ImageSlideshow/Core (= 1.8.0)
   - ImageSlideshow/Core (1.8.0)
@@ -6,6 +7,7 @@ PODS:
   - SideMenu (6.0.0)
 
 DEPENDENCIES:
+  - FlexColorPicker
   - ImageSlideshow (~> 1.8)
   - MBCircularProgressBar
   - SideMenu (~> 6.0.0)
@@ -15,12 +17,15 @@ SPEC REPOS:
     - ImageSlideshow
     - MBCircularProgressBar
     - SideMenu
+  trunk:
+    - FlexColorPicker
 
 SPEC CHECKSUMS:
+  FlexColorPicker: e627af3d744786378ae65e53214528cc31105921
   ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   SideMenu: 1b826b95cc7db1a3c7d164f8a6e6e92506ffb0f5
 
-PODFILE CHECKSUM: 8c3993544b0c63663d7b0bcca966eb802574ec1e
+PODFILE CHECKSUM: 05219ae3d348f37f59582006b0936de74b2a648d
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.8.4
