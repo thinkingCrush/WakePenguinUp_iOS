@@ -10,6 +10,7 @@ target 'WakePenguinUp' do
   pod 'MBCircularProgressBar'
   pod 'SideMenu', '~> 6.0.0'
   pod 'FlexColorPicker'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'WakePenguinUpTests' do
     inherit! :search_paths

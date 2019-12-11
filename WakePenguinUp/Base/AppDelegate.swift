@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarApperace.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        navigationBarApperace.shadowImage = UIImage()
 //        navigationBarApperace.backgroundColor = UIColor.clear
+        
+        //구글 광고 시작
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         let userDefault = UserDefaults.standard
         

@@ -39,6 +39,14 @@ struct R {
         static var Message_14 = "message_14".localized
         static var Message_15 = "message_15".localized
         static var Message_16 = "message_16".localized
+        static var Message_17 = "message_17".localized
+        static var Message_18 = "message_18".localized
         
+        static var VeryWeakly = "very_weakly".localized
+        static var Weakly = "weakly".localized
+        static var Normal = "normal".localized
+        static var Strongly = "strongly".localized
+        static var VeryStrongly = "very_strongly".localized
+    
     }
 }

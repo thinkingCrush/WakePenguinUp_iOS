@@ -263,7 +263,11 @@ class MainViewController : BaseViewController, WKUIDelegate {
     //왼쪽 스와이프시 사이드 메뉴 호출
     @objc func handleGesture(gesture : UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.left {
-            self.moveSideMenu()
+            if let vc = UIApplication.topMostViewController as? MainViewController{
+            if vc.view.viewWithTag(10001) == nil, vc.view.viewWithTag(10001) == nil {
+                    self.moveSideMenu()
+                }
+            }
         }
     }
     

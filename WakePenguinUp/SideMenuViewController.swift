@@ -142,6 +142,32 @@ class SideMenuViewController : BaseViewController {
         }
         
     }
+    
+    @IBAction func shakeAction(_ sender: UIButton) {
+        dismiss(animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                if let vc = UIApplication.topMostViewController as? MainViewController{
+                    if vc.view.viewWithTag(10001) == nil {
+                        let popupView = ShakeSettingPopupView()
+                        popupView.tag = 10001
+                        popupView.frame.size = CGSize(width: 300, height: 250)
+                        popupView.center = vc.view.center
+                        popupView.alpha = 1
+                        popupView.transform = CGAffineTransform(scaleX: 0.8, y: 1.2)
+                        vc.view.addSubview(popupView)
+                        
+                        
+                        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [],  animations: {
+                            vc.darkBackgroundView.isHidden = false
+                            vc.darkBackgroundView.alpha = 0.8
+                            popupView.transform = .identity
+                        })
+                    }
+                }
+            }
+        }
+        
+    }
 }
 
 

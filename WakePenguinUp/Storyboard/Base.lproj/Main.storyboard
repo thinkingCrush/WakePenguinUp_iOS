@@ -180,8 +180,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-Ti-Ba0">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-Ti-Ba0">
+                                        <rect key="frame" x="0.0" y="44" width="452" height="621"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-sh-gvZ">
@@ -475,6 +475,7 @@ URL 주소를 확인해주세요.</string>
                             <constraint firstAttribute="bottom" secondItem="SGn-67-uLJ" secondAttribute="bottom" id="92b-RU-tyk"/>
                             <constraint firstItem="1S2-fM-nhb" firstAttribute="leading" secondItem="Kkn-jh-CTl" secondAttribute="leading" id="B9G-84-zoR"/>
                             <constraint firstAttribute="bottom" secondItem="Q5L-6Z-Bbe" secondAttribute="bottom" id="BCC-Xd-rha"/>
+                            <constraint firstItem="Kkn-jh-CTl" firstAttribute="bottom" secondItem="1S2-fM-nhb" secondAttribute="bottom" id="CLx-F5-qnL"/>
                             <constraint firstItem="JTJ-4z-kCr" firstAttribute="leading" secondItem="1S2-fM-nhb" secondAttribute="leading" id="FgF-HG-Y3w"/>
                             <constraint firstAttribute="trailing" secondItem="Q5L-6Z-Bbe" secondAttribute="trailing" id="QOA-nH-D42"/>
                             <constraint firstItem="SGn-67-uLJ" firstAttribute="top" secondItem="Tpr-eD-SgH" secondAttribute="top" id="Y5h-J2-hLJ"/>
@@ -486,7 +487,6 @@ URL 주소를 확인해주세요.</string>
                             <constraint firstItem="SGn-67-uLJ" firstAttribute="trailing" secondItem="Kkn-jh-CTl" secondAttribute="trailing" id="ezK-m1-d2b"/>
                             <constraint firstItem="Q5L-6Z-Bbe" firstAttribute="top" secondItem="Tpr-eD-SgH" secondAttribute="top" id="gfd-od-k0J"/>
                             <constraint firstItem="1S2-fM-nhb" firstAttribute="top" secondItem="Kkn-jh-CTl" secondAttribute="top" id="jFp-wO-WoJ"/>
-                            <constraint firstItem="Kkn-jh-CTl" firstAttribute="bottom" secondItem="1S2-fM-nhb" secondAttribute="bottom" id="key-Np-CjK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kkn-jh-CTl"/>
                     </view>
@@ -553,6 +553,20 @@ URL 주소를 확인해주세요.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McY-Q3-k89">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="AKb-Xh-fev">
+                                                <rect key="frame" x="291" y="4" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AKb-Xh-fev" secondAttribute="height" multiplier="1:1" id="Rsf-gY-g8G"/>
+                                                    <constraint firstAttribute="width" constant="30" id="WJ9-l7-Ecq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <state key="normal" image="icon_shake">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shakeAction:" destination="Key-kl-v2z" eventType="touchUpInside" id="s4x-6Z-2rT"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skt-3m-K4d">
                                                 <rect key="frame" x="324" y="2" width="40" height="40"/>
                                                 <constraints>
@@ -581,8 +595,11 @@ URL 주소를 확인해주세요.</string>
                                             <constraint firstItem="skt-3m-K4d" firstAttribute="centerY" secondItem="McY-Q3-k89" secondAttribute="centerY" id="3G5-xc-Pc2"/>
                                             <constraint firstItem="BPv-dz-fmu" firstAttribute="centerY" secondItem="McY-Q3-k89" secondAttribute="centerY" id="9ux-A3-iU3"/>
                                             <constraint firstAttribute="height" constant="44" id="Fk0-HL-QOb"/>
+                                            <constraint firstItem="AKb-Xh-fev" firstAttribute="centerY" secondItem="McY-Q3-k89" secondAttribute="centerY" constant="-3" id="IEB-8E-o6P"/>
                                             <constraint firstItem="BPv-dz-fmu" firstAttribute="leading" secondItem="skt-3m-K4d" secondAttribute="trailing" id="cGv-zc-xwK"/>
                                             <constraint firstAttribute="trailing" secondItem="BPv-dz-fmu" secondAttribute="trailing" constant="10" id="eg4-oE-65g"/>
+                                            <constraint firstItem="skt-3m-K4d" firstAttribute="leading" secondItem="AKb-Xh-fev" secondAttribute="trailing" constant="3" id="hLC-0y-wuD"/>
+                                            <constraint firstItem="AKb-Xh-fev" firstAttribute="width" secondItem="AKb-Xh-fev" secondAttribute="height" multiplier="1:1" id="w1S-ZI-ddO"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-P4-cvj">
@@ -928,7 +945,7 @@ URL 주소를 확인해주세요.</string>
         <!--All Controls & Custom Layout-->
         <scene sceneID="nRM-Gy-O9V">
             <objects>
-                <viewController storyboardIdentifier="ColorPickerVC" title="All Controls &amp; Custom Layout" id="wgY-v0-ydA" customClass="ColorPickerViewController" customModule="infoCar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPickerVC" title="All Controls &amp; Custom Layout" id="wgY-v0-ydA" customClass="ColorPickerViewController" customModule="WPU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gEK-ER-qkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1176,88 +1193,88 @@ URL 주소를 확인해주세요.</string>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Axp-Ln-JGM"/>
-                                                <exclude reference="GRj-Rx-DJ0"/>
-                                                <exclude reference="wtY-VE-RLi"/>
-                                                <exclude reference="yEV-UO-O2p"/>
-                                                <exclude reference="uuv-cC-DzV"/>
-                                                <exclude reference="Iwe-5q-act"/>
-                                                <exclude reference="czw-h6-eb0"/>
-                                                <exclude reference="aF6-zM-hvW"/>
                                                 <exclude reference="1mv-Db-eGe"/>
-                                                <exclude reference="DHZ-Fg-ZLt"/>
-                                                <exclude reference="y5F-QT-RbY"/>
-                                                <exclude reference="sgV-Cw-McQ"/>
-                                                <exclude reference="G8W-qd-dLD"/>
-                                                <exclude reference="p6E-HS-yHt"/>
                                                 <exclude reference="6z3-dO-VY0"/>
+                                                <exclude reference="Axp-Ln-JGM"/>
+                                                <exclude reference="DHZ-Fg-ZLt"/>
+                                                <exclude reference="G8W-qd-dLD"/>
+                                                <exclude reference="GRj-Rx-DJ0"/>
+                                                <exclude reference="Iwe-5q-act"/>
+                                                <exclude reference="aF6-zM-hvW"/>
+                                                <exclude reference="czw-h6-eb0"/>
+                                                <exclude reference="p6E-HS-yHt"/>
+                                                <exclude reference="sgV-Cw-McQ"/>
                                                 <exclude reference="tvp-7C-JfQ"/>
-                                                <exclude reference="6aU-S6-hTp"/>
-                                                <exclude reference="n9C-La-6RC"/>
-                                                <exclude reference="D9t-a3-3Pb"/>
-                                                <exclude reference="ST7-ve-3fN"/>
-                                                <exclude reference="IQn-H3-Mgt"/>
-                                                <exclude reference="7R8-1B-cxW"/>
-                                                <exclude reference="FsO-93-9gk"/>
-                                                <exclude reference="2Ma-3e-YnI"/>
-                                                <exclude reference="VsT-Ts-agu"/>
-                                                <exclude reference="FMf-35-TBp"/>
+                                                <exclude reference="uuv-cC-DzV"/>
+                                                <exclude reference="wtY-VE-RLi"/>
+                                                <exclude reference="y5F-QT-RbY"/>
+                                                <exclude reference="yEV-UO-O2p"/>
                                                 <exclude reference="1vV-aT-F3z"/>
-                                                <exclude reference="GXY-H6-VHP"/>
+                                                <exclude reference="2Ma-3e-YnI"/>
+                                                <exclude reference="6aU-S6-hTp"/>
+                                                <exclude reference="7R8-1B-cxW"/>
                                                 <exclude reference="CIp-3G-nzV"/>
+                                                <exclude reference="D9t-a3-3Pb"/>
+                                                <exclude reference="FMf-35-TBp"/>
+                                                <exclude reference="FsO-93-9gk"/>
+                                                <exclude reference="GXY-H6-VHP"/>
+                                                <exclude reference="IQn-H3-Mgt"/>
+                                                <exclude reference="ST7-ve-3fN"/>
+                                                <exclude reference="VsT-Ts-agu"/>
                                                 <exclude reference="hqH-Gk-7PG"/>
-                                                <exclude reference="ys5-sy-G7C"/>
+                                                <exclude reference="n9C-La-6RC"/>
                                                 <exclude reference="nW9-cR-z4t"/>
                                                 <exclude reference="rE1-p1-XAe"/>
+                                                <exclude reference="ys5-sy-G7C"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Axp-Ln-JGM"/>
                                                 <include reference="GRj-Rx-DJ0"/>
-                                                <include reference="wtY-VE-RLi"/>
                                                 <include reference="Iwe-5q-act"/>
-                                                <exclude reference="D9t-a3-3Pb"/>
-                                                <include reference="7R8-1B-cxW"/>
-                                                <include reference="2Ma-3e-YnI"/>
+                                                <include reference="wtY-VE-RLi"/>
                                                 <include reference="1vV-aT-F3z"/>
+                                                <include reference="2Ma-3e-YnI"/>
+                                                <include reference="7R8-1B-cxW"/>
+                                                <exclude reference="D9t-a3-3Pb"/>
                                                 <include reference="hqH-Gk-7PG"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular">
                                             <mask key="constraints">
+                                                <include reference="6z3-dO-VY0"/>
+                                                <include reference="G8W-qd-dLD"/>
                                                 <include reference="czw-h6-eb0"/>
                                                 <include reference="sgV-Cw-McQ"/>
-                                                <include reference="G8W-qd-dLD"/>
-                                                <include reference="6z3-dO-VY0"/>
-                                                <include reference="n9C-La-6RC"/>
-                                                <include reference="IQn-H3-Mgt"/>
                                                 <include reference="FsO-93-9gk"/>
+                                                <include reference="IQn-H3-Mgt"/>
+                                                <include reference="n9C-La-6RC"/>
                                                 <include reference="rE1-p1-XAe"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="yEV-UO-O2p"/>
-                                                <include reference="aF6-zM-hvW"/>
                                                 <include reference="1mv-Db-eGe"/>
+                                                <include reference="aF6-zM-hvW"/>
                                                 <include reference="y5F-QT-RbY"/>
+                                                <include reference="yEV-UO-O2p"/>
                                                 <include reference="6aU-S6-hTp"/>
                                                 <include reference="ST7-ve-3fN"/>
-                                                <include reference="ys5-sy-G7C"/>
                                                 <include reference="nW9-cR-z4t"/>
+                                                <include reference="ys5-sy-G7C"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="uuv-cC-DzV"/>
                                                 <include reference="DHZ-Fg-ZLt"/>
                                                 <include reference="p6E-HS-yHt"/>
                                                 <include reference="tvp-7C-JfQ"/>
-                                                <include reference="VsT-Ts-agu"/>
+                                                <include reference="uuv-cC-DzV"/>
+                                                <include reference="CIp-3G-nzV"/>
                                                 <include reference="FMf-35-TBp"/>
                                                 <include reference="GXY-H6-VHP"/>
-                                                <include reference="CIp-3G-nzV"/>
+                                                <include reference="VsT-Ts-agu"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1310,6 +1327,7 @@ URL 주소를 확인해주세요.</string>
         <image name="icon_notconnected" width="359.33334350585938" height="311.66665649414062"/>
         <image name="icon_penguin_h_2" width="333.33334350585938" height="400"/>
         <image name="icon_settings2" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="icon_shake" width="42.666667938232422" height="42.666667938232422"/>
         <image name="icon_star_off" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>

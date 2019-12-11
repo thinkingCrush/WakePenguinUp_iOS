@@ -71,87 +71,18 @@ extension AVPlayerViewController {
     }
 }
 
-extension UIWindow {
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        print("shake!")
-        if motion == .motionShake {
-            if let topController = UIApplication.topMostViewController{
-                if let lockView = topController.view.viewWithTag(1000) as? LockView {
-                    if lockView.contentView.isHidden {
-                        
-                        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-                        UIApplication.shared.endIgnoringInteractionEvents()
-                        
-                        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
-                            lockView.contentView.alpha = 1.0
-                            lockView.contentView.isHidden = false
-                            lockView.lockImage.image = UIImage(named: "icon_lock_opened")
-                            lockView.lockImage.isHidden = false
-                        }, completion: {(isCompleted) in
-                            lockView.contentView.isHidden = false
-                            lockView.contentView.shake(duration: 1)
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                                lockView.countLabel.isHidden = true
-                                lockView.countLabel.text = "3"
-                            }
-                        })
-                        
-                        let path = Bundle.main.path(forResource: "sound_lock", ofType : "wav")!
-                        let url = URL(fileURLWithPath : path)
-                        do {
-                            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: .mixWithOthers)
-                            try AVAudioSession.sharedInstance().setActive(true)
-                            
-                            LockView.soundPlayer = try AVAudioPlayer(contentsOf: url)
-                            LockView.soundPlayer.prepareToPlay()
-                            LockView.soundPlayer.play()
-                        } catch {
-                            print ("There is an issue with this code!")
+extension Float {
+    func rounded(toPlaces places:Int) -> Float {
+        let divisor = pow(10.0, Float(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
 
-                        }
-                        
-                        
-                        if topController.view.viewWithTag(10002) == nil{
-                            if let sleepView = topController.view.viewWithTag(10001) {
-                                sleepView.removeFromSuperview()
-                            }
-                            
-//                            let frame = CGRect(origin: topController.view.center, size: CGSize(width: 88, height: 167.5))
-//                            guard let wakeupImageView = UIImageView.fromGif(frame: frame, resourceName: "icon_penguin_wakeup_gif") else { return }
-                                                        
-                            let wakeupImageView = UIImageView(image: UIImage(named: "icon_penguin_wakeup_1"))
-                            
-                            let images: [UIImage] = [UIImage(named: "icon_penguin_wakeup_1")!, UIImage(named: "icon_penguin_wakeup_2")!]
-                            wakeupImageView.animationImages = images
-
-                            wakeupImageView.translatesAutoresizingMaskIntoConstraints = false
-                            wakeupImageView.tag = 10002
-                            wakeupImageView.animationDuration = 1
-                            topController.view.addSubview(wakeupImageView)
-                            
-                            wakeupImageView.bottomAnchor.constraint(equalTo: topController.view.bottomAnchor).isActive = true
-                            wakeupImageView.trailingAnchor.constraint(equalTo: topController.view.trailingAnchor, constant: -10).isActive = true
-                            
-                            wakeupImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
-                            wakeupImageView.widthAnchor.constraint(equalToConstant: 220).isActive = true
-                            
-//
-                            
-                            wakeupImageView.startAnimating()
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                                wakeupImageView.removeFromSuperview()
-                            }
-                            
-                            LockView.alarmTimerState = false
-                            LockView.alarmTimer?.invalidate()
-                            
-                        }
-                        
-                    }
-                }
-            }
-        }
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }
 

@@ -34,3 +34,11 @@
 "message_14" = "타이머 설정";
 "message_15" = "설정한 타이머에 맞춰 앱을\n자동으로 종료시켜요.";
 "message_16" = "타이머 설정으로 \n앱을 종료합니다";
+"message_17" = "흔들기 설정";
+"message_18" = "잠금 해제 시 흔들기의 강도를 설정합니다.";
+"very_weakly" = "매우\n약하게";
+"weakly" = "약하게";
+"normal" = "보통";
+"strongly" = "강하게";
+"very_strongly" = "매우\n강하게";
+

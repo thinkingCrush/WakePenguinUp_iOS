@@ -34,3 +34,10 @@
 "message_14" = "Timer setting";
 "message_15" = "Automatically close the app\non the timer you set";
 "message_16" = "Close the app\non the timer you set.";
+"message_17" = "Shake settings";
+"message_18" = "Sets the strength of the shake on unlock.";
+"very_weakly" = "Very\nweakly";
+"weakly" = "Weakly";
+"normal" = "Normal";
+"strongly" = "Strongly";
+"very_strongly" = "Very\nstrongly";

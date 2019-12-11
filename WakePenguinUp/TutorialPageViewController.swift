@@ -50,6 +50,7 @@ class TutorialPageViewController: BaseViewController{
         
 //        let recognizer = UITapGestureRecognizer(target: self, action: #selector(TutorialPageViewController.didTap))
 //        slideshow.addGestureRecognizer(recognizer)
+        
     }
     
     

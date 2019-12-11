@@ -175,7 +175,7 @@ class LockView: UIView {
                 sleepImageView.translatesAutoresizingMaskIntoConstraints = false
                 sleepImageView.tag = 10001
                 sleepImageView.animationDuration = 1
-                topController.view.insertSubview(sleepImageView, at: 1)
+                topController.view.insertSubview(sleepImageView, at: 2)
                 
                 
                 

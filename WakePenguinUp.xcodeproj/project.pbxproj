@@ -25,6 +25,8 @@
 		12100E042321435C0081F8A2 /* WakePenguinUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12100E032321435C0081F8A2 /* WakePenguinUpUITests.swift */; };
 		122018442341FAC600A9FA41 /* ARoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122018432341FAC600A9FA41 /* ARoundButton.swift */; };
 		123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */; };
+		1240CF6F239F654400A07645 /* ShakeSettingPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1240CF6E239F654400A07645 /* ShakeSettingPopupView.xib */; };
+		1240CF71239F654C00A07645 /* ShakeSettingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240CF70239F654C00A07645 /* ShakeSettingPopupView.swift */; };
 		125F1FCD2333555400ABDF04 /* FavoritesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */; };
 		126DA37423752EA80050F131 /* sound_lock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 126DA37323752EA80050F131 /* sound_lock.wav */; };
 		129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6C43233075A80026CDE3 /* ARoundView.swift */; };
@@ -85,6 +87,8 @@
 		12100E052321435C0081F8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		122018432341FAC600A9FA41 /* ARoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundButton.swift; sourceTree = "<group>"; };
 		123C05A8233DECC300A7CEBB /* RegisterPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
+		1240CF6E239F654400A07645 /* ShakeSettingPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShakeSettingPopupView.xib; sourceTree = "<group>"; };
+		1240CF70239F654C00A07645 /* ShakeSettingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeSettingPopupView.swift; sourceTree = "<group>"; };
 		125F1FCC2333555400ABDF04 /* FavoritesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesItemCell.swift; sourceTree = "<group>"; };
 		126DA37323752EA80050F131 /* sound_lock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_lock.wav; sourceTree = "<group>"; };
 		129B6C43233075A80026CDE3 /* ARoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARoundView.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				120EA8F32334AAF900B94771 /* RegisterPopupView.swift */,
 				12EE9AF223863F210000B041 /* TimerPopupView.swift */,
 				12EE9AF423863F300000B041 /* TimerPopupView.xib */,
+				1240CF6E239F654400A07645 /* ShakeSettingPopupView.xib */,
+				1240CF70239F654C00A07645 /* ShakeSettingPopupView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				12084D6D23617AAA0087477A /* Localizable.strings in Resources */,
 				12100DEB2321435C0081F8A2 /* Assets.xcassets in Resources */,
 				123C05A9233DECC300A7CEBB /* RegisterPopupView.xib in Resources */,
+				1240CF6F239F654400A07645 /* ShakeSettingPopupView.xib in Resources */,
 				12100DE92321435B0081F8A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +514,7 @@
 				12100DE62321435B0081F8A2 /* TutorialPageViewController.swift in Sources */,
 				120EA8F02334525200B94771 /* SideMenuNavigationController.swift in Sources */,
 				120C5A99233226F7009AA613 /* LockView.swift in Sources */,
+				1240CF71239F654C00A07645 /* ShakeSettingPopupView.swift in Sources */,
 				12100DE42321435B0081F8A2 /* AppDelegate.swift in Sources */,
 				12F80184232F80000055C4D0 /* Common.swift in Sources */,
 				129B6C44233075A80026CDE3 /* ARoundView.swift in Sources */,

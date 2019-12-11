@@ -58,6 +58,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-2028686242886111~5863977643</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 </dict>
