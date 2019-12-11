@@ -710,14 +710,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.Tcrush.WakePenguinUp;
 				PRODUCT_NAME = WPU;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -733,14 +733,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LTJZBMZ6Z9;
 				INFOPLIST_FILE = "$(SRCROOT)/WakePenguinUp/SuppoertFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.Tcrush.WakePenguinUp;
 				PRODUCT_NAME = WPU;
 				PROVISIONING_PROFILE_SPECIFIER = "";
